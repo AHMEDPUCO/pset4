@@ -1,0 +1,114 @@
+2025-11-13 00:46:29,006 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-13 00:46:29,008 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-13 00:46:29,009 - INFO - 
+================================================================================
+2025-11-13 00:46:29,010 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-13 00:46:29,012 - INFO - ================================================================================
+2025-11-13 00:46:29,013 - INFO - Servicios: green
+2025-11-13 00:46:29,014 - INFO - Años: 2024-2024
+2025-11-13 00:46:29,015 - INFO - Meses: [3]
+2025-11-13 00:46:29,016 - INFO - RUN_ID: docker_test
+2025-11-13 00:46:29,017 - INFO - Overwrite: True
+2025-11-13 00:46:29,019 - INFO - ================================================================================
+
+2025-11-13 00:46:29,027 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-13 00:46:29,040 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-13 00:46:29,041 - INFO - 
+================================================================================
+2025-11-13 00:46:29,043 - INFO - Servicio: GREEN
+2025-11-13 00:46:29,043 - INFO - ================================================================================
+
+2025-11-13 00:50:29,916 - INFO -   ✓ Partición green 2024-03 eliminada
+2025-11-13 00:51:02,982 - INFO -   ✓ green 2024-03: 51,461 filas en 10.6s (4873 filas/seg)
+2025-11-13 00:51:03,710 - INFO - 📊 Columnas existentes en analytics.obt_trips: ['is_weekend', 'trip_duration_min']
+2025-11-13 00:51:03,728 - INFO - 🔧 Agregando 2 columnas calculadas...
+2025-11-13 01:02:54,098 - INFO - ✅ Columnas calculadas agregadas exitosamente
+2025-11-13 01:10:01,202 - INFO - ✅ Índice creado: idx_obt_trips_pickup_date
+2025-11-13 01:12:05,434 - INFO - ✅ Índice creado: idx_obt_trips_service_type
+2025-11-13 01:14:16,561 - INFO - ✅ Índice creado: idx_obt_trips_location_combo
+2025-11-13 01:14:44,076 - INFO - ✅ Índice creado: idx_obt_trips_trip_duration
+2025-11-13 01:14:44,115 - INFO - Ejecutando VACUUM ANALYZE antes de índices...
+2025-11-13 01:14:44,255 - ERROR - 
+✗ Error fatal: could not resize shared memory segment "/PostgreSQL.3537883010" to 1073795488 bytes: No space left on device
+
+2025-11-13 01:14:45,321 - INFO - ✓ Conexión cerrada
+2025-11-13 01:32:09,991 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-13 01:32:09,992 - INFO - 
+================================================================================
+2025-11-13 01:32:09,993 - INFO - MODO: BY-PARTITION
+2025-11-13 01:32:09,993 - INFO - ================================================================================
+2025-11-13 01:32:09,994 - INFO - Servicios: green
+2025-11-13 01:32:09,994 - INFO - Años: 2015-2015
+2025-11-13 01:32:09,995 - INFO - Meses: [1]
+2025-11-13 01:32:09,995 - INFO - RUN_ID: docker_test
+2025-11-13 01:32:09,996 - INFO - Overwrite: True
+2025-11-13 01:32:09,996 - INFO - ================================================================================
+
+2025-11-13 01:32:10,008 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-13 01:32:10,021 - INFO - ✓ Tabla OBT base creada (UNLOGGED)
+2025-11-13 01:32:10,022 - INFO - 
+================================================================================
+2025-11-13 01:32:10,023 - INFO - Servicio: GREEN
+2025-11-13 01:32:10,023 - INFO - ================================================================================
+
+2025-11-13 01:36:07,121 - INFO -   ✓ green 2015-01: 4,390,320 filas en 169.0s (25972 filas/seg)
+2025-11-13 01:36:10,017 - INFO - 📊 Columnas existentes en analytics.obt_trips: ['hour_of_day', 'is_weekend', 'trip_duration_min', 'trip_speed_mph']
+2025-11-13 01:36:10,022 - INFO - ✅ Todas las columnas calculadas ya existen
+2025-11-13 01:36:10,040 - INFO - Creando índices en analytics.obt_trips...
+2025-11-13 01:38:14,166 - INFO -   ✓ Índice creado/ya existente en 124.1s
+2025-11-13 01:40:10,116 - INFO -   ✓ Índice creado/ya existente en 115.9s
+2025-11-13 01:41:42,571 - INFO -   ✓ Índice creado/ya existente en 92.5s
+2025-11-13 01:43:41,438 - INFO -   ✓ Índice creado/ya existente en 118.9s
+2025-11-13 01:45:48,844 - INFO -   ✓ Índice creado/ya existente en 127.4s
+2025-11-13 01:49:10,645 - INFO -   ✓ Índice creado/ya existente en 201.8s
+2025-11-13 01:51:40,451 - INFO -   ✓ Índice creado/ya existente en 149.8s
+2025-11-13 01:53:41,647 - INFO -   ✓ Índice creado/ya existente en 121.2s
+2025-11-13 01:55:28,649 - INFO -   ✓ Índice creado/ya existente en 107.0s
+2025-11-13 01:55:28,659 - INFO - ✓ Creación de índices completada
+2025-11-13 01:55:28,662 - INFO - 
+================================================================================
+2025-11-13 01:55:28,663 - INFO - RESUMEN BY-PARTITION
+2025-11-13 01:55:28,664 - INFO - ================================================================================
+2025-11-13 01:55:28,665 - INFO - Particiones procesadas: 1
+2025-11-13 01:55:28,666 - INFO - Particiones omitidas: 0
+2025-11-13 01:55:28,668 - INFO - Total filas insertadas: 4,390,320
+2025-11-13 01:55:28,669 - INFO - Tiempo total: 1398.7s
+2025-11-13 01:55:28,670 - INFO - Velocidad: 3139 filas/seg
+2025-11-13 01:55:28,670 - INFO - ================================================================================
+
+2025-11-13 01:55:28,673 - INFO - 
+================================================================================
+2025-11-13 01:55:28,674 - INFO - RESUMEN OBT COMPLETO
+2025-11-13 01:55:28,674 - INFO - ================================================================================
+
+2025-11-13 01:55:52,716 - INFO - Total filas en OBT: 115,450,578
+
+2025-11-13 01:56:11,156 - INFO - Por servicio:
+2025-11-13 01:56:11,158 - INFO -   green: 6,348,482
+2025-11-13 01:56:11,159 - INFO -   yellow: 109,102,096
+2025-11-13 01:56:28,686 - INFO - 
+Por año:
+2025-11-13 01:56:28,687 - INFO -   2015: 4,390,320
+2025-11-13 01:56:28,688 - INFO -   2020: 16
+2025-11-13 01:56:28,688 - INFO -   2021: 1,227,842
+2025-11-13 01:56:28,688 - INFO -   2022: 37,503,798
+2025-11-13 01:56:28,689 - INFO -   2023: 36,211,866
+2025-11-13 01:56:28,690 - INFO -   2024: 36,116,721
+2025-11-13 01:56:28,690 - INFO -   2025: 15
+2025-11-13 01:56:28,715 - INFO - 
+Tamaños:
+2025-11-13 01:56:28,716 - INFO -   Tabla: 41 GB
+2025-11-13 01:56:28,717 - INFO -   Índices: 14 GB
+2025-11-13 01:56:28,718 - INFO -   Total: 55 GB
+2025-11-13 01:56:28,720 - INFO - 
+Columnas calculadas disponibles:
+2025-11-13 01:56:28,721 - INFO -   • trip_duration_min - Duración del viaje en minutos
+2025-11-13 01:56:28,723 - INFO -   • trip_speed_mph     - Velocidad promedio en MPH
+2025-11-13 01:56:28,724 - INFO -   • is_weekend         - Indicador de fin de semana
+2025-11-13 01:56:28,725 - INFO -   • hour_of_day        - Hora del día
+2025-11-13 01:56:28,726 - INFO - 
+================================================================================
+
+2025-11-13 01:56:28,727 - INFO - ✓ OBT Builder OPTIMIZADO completado exitosamente
+
+2025-11-13 01:56:28,744 - INFO - ✓ Conexión cerrada

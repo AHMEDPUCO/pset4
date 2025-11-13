@@ -1,0 +1,435 @@
+service,year,month,raw_count,clean_count,removed,pct_removed,duration_sec,status,error
+yellow,2015,1,12741035,12373047,367988,2.8882112010523477,250.04982614517212,OK,
+yellow,2015,2,12442394,12074350,368044,2.9579838092251376,220.54574489593506,OK,
+yellow,2015,3,0,0,0,0.0,0.0,ERROR,"An error occurred while calling o877.parquet.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 28.0 failed 1 times, most recent failure: Lost task 0.0 in stage 28.0 (TID 178) (8bc7c8e87b09 executor driver): org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.util.ThreadUtils$.parmap(ThreadUtils.scala:383)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.readParquetFootersInParallel(ParquetFileFormat.scala:443)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1(ParquetFileFormat.scala:493)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1$adapted(ParquetFileFormat.scala:485)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.$anonfun$mergeSchemasInParallel$2(SchemaMergeUtils.scala:79)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:855)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:855)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:364)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:328)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:161)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.spark.SparkException: [CANNOT_READ_FILE_FOOTER] Could not read footer for file: file:/tmp/yellow_tripdata_2015-03.parquet. Please ensure that the file is in either ORC or Parquet format. If not, please convert it to a valid format. If the file is in the valid format, please check if it is corrupt. If it is, you can choose to either ignore it or fix the corruption.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.cannotReadFooterForFileError(QueryExecutionErrors.scala:1056)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:456)
+	at org.apache.spark.util.ThreadUtils$.$anonfun$parmap$2(ThreadUtils.scala:380)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: file:/tmp/yellow_tripdata_2015-03.parquet is not a Parquet file. Expected magic number at tail, but found [-24, -126, -7, -87]
+	at org.apache.parquet.hadoop.ParquetFileReader.readFooter(ParquetFileReader.java:565)
+	at org.apache.parquet.hadoop.ParquetFileReader.<init>(ParquetFileReader.java:799)
+	at org.apache.parquet.hadoop.ParquetFileReader.open(ParquetFileReader.java:666)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:85)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:76)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:450)
+	... 14 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2844)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2780)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2779)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2779)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1242)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1242)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1242)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3048)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2982)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2971)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:984)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1046)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:407)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:1045)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.mergeSchemasInParallel(SchemaMergeUtils.scala:73)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.mergeSchemasInParallel(ParquetFileFormat.scala:497)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetUtils$.inferSchema(ParquetUtils.scala:132)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat.inferSchema(ParquetFileFormat.scala:79)
+	at org.apache.spark.sql.execution.datasources.DataSource.$anonfun$getOrInferFileFormatSchema$11(DataSource.scala:208)
+	at scala.Option.orElse(Option.scala:447)
+	at org.apache.spark.sql.execution.datasources.DataSource.getOrInferFileFormatSchema(DataSource.scala:205)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:407)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.parquet(DataFrameReader.scala:563)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.util.ThreadUtils$.parmap(ThreadUtils.scala:383)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.readParquetFootersInParallel(ParquetFileFormat.scala:443)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1(ParquetFileFormat.scala:493)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1$adapted(ParquetFileFormat.scala:485)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.$anonfun$mergeSchemasInParallel$2(SchemaMergeUtils.scala:79)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:855)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:855)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:364)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:328)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:161)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+Caused by: org.apache.spark.SparkException: [CANNOT_READ_FILE_FOOTER] Could not read footer for file: file:/tmp/yellow_tripdata_2015-03.parquet. Please ensure that the file is in either ORC or Parquet format. If not, please convert it to a valid format. If the file is in the valid format, please check if it is corrupt. If it is, you can choose to either ignore it or fix the corruption.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.cannotReadFooterForFileError(QueryExecutionErrors.scala:1056)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:456)
+	at org.apache.spark.util.ThreadUtils$.$anonfun$parmap$2(ThreadUtils.scala:380)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: file:/tmp/yellow_tripdata_2015-03.parquet is not a Parquet file. Expected magic number at tail, but found [-24, -126, -7, -87]
+	at org.apache.parquet.hadoop.ParquetFileReader.readFooter(ParquetFileReader.java:565)
+	at org.apache.parquet.hadoop.ParquetFileReader.<init>(ParquetFileReader.java:799)
+	at org.apache.parquet.hadoop.ParquetFileReader.open(ParquetFileReader.java:666)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:85)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:76)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:450)
+	... 14 more
+"
+yellow,2015,4,13063758,12715364,348394,2.6668742638986425,237.85095715522766,OK,
+yellow,2015,5,0,0,0,0.0,0.0,ERROR,"An error occurred while calling o1308.parquet.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 43.0 failed 1 times, most recent failure: Lost task 0.0 in stage 43.0 (TID 268) (8bc7c8e87b09 executor driver): org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.util.ThreadUtils$.parmap(ThreadUtils.scala:383)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.readParquetFootersInParallel(ParquetFileFormat.scala:443)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1(ParquetFileFormat.scala:493)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1$adapted(ParquetFileFormat.scala:485)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.$anonfun$mergeSchemasInParallel$2(SchemaMergeUtils.scala:79)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:855)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:855)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:364)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:328)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:161)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.spark.SparkException: [CANNOT_READ_FILE_FOOTER] Could not read footer for file: file:/tmp/yellow_tripdata_2015-05.parquet. Please ensure that the file is in either ORC or Parquet format. If not, please convert it to a valid format. If the file is in the valid format, please check if it is corrupt. If it is, you can choose to either ignore it or fix the corruption.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.cannotReadFooterForFileError(QueryExecutionErrors.scala:1056)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:456)
+	at org.apache.spark.util.ThreadUtils$.$anonfun$parmap$2(ThreadUtils.scala:380)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: file:/tmp/yellow_tripdata_2015-05.parquet is not a Parquet file. Expected magic number at tail, but found [-68, -82, 89, 7]
+	at org.apache.parquet.hadoop.ParquetFileReader.readFooter(ParquetFileReader.java:565)
+	at org.apache.parquet.hadoop.ParquetFileReader.<init>(ParquetFileReader.java:799)
+	at org.apache.parquet.hadoop.ParquetFileReader.open(ParquetFileReader.java:666)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:85)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:76)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:450)
+	... 14 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2844)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2780)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2779)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2779)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1242)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1242)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1242)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3048)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2982)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2971)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:984)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2398)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2419)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2438)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2463)
+	at org.apache.spark.rdd.RDD.$anonfun$collect$1(RDD.scala:1046)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:112)
+	at org.apache.spark.rdd.RDD.withScope(RDD.scala:407)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:1045)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.mergeSchemasInParallel(SchemaMergeUtils.scala:73)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.mergeSchemasInParallel(ParquetFileFormat.scala:497)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetUtils$.inferSchema(ParquetUtils.scala:132)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat.inferSchema(ParquetFileFormat.scala:79)
+	at org.apache.spark.sql.execution.datasources.DataSource.$anonfun$getOrInferFileFormatSchema$11(DataSource.scala:208)
+	at scala.Option.orElse(Option.scala:447)
+	at org.apache.spark.sql.execution.datasources.DataSource.getOrInferFileFormatSchema(DataSource.scala:205)
+	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:407)
+	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+	at scala.Option.getOrElse(Option.scala:189)
+	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+	at org.apache.spark.sql.DataFrameReader.parquet(DataFrameReader.scala:563)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.spark.SparkException: Exception thrown in awaitResult: 
+	at org.apache.spark.util.SparkThreadUtils$.awaitResult(SparkThreadUtils.scala:56)
+	at org.apache.spark.util.ThreadUtils$.awaitResult(ThreadUtils.scala:310)
+	at org.apache.spark.util.ThreadUtils$.parmap(ThreadUtils.scala:383)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.readParquetFootersInParallel(ParquetFileFormat.scala:443)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1(ParquetFileFormat.scala:493)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$mergeSchemasInParallel$1$adapted(ParquetFileFormat.scala:485)
+	at org.apache.spark.sql.execution.datasources.SchemaMergeUtils$.$anonfun$mergeSchemasInParallel$2(SchemaMergeUtils.scala:79)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2(RDD.scala:855)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitions$2$adapted(RDD.scala:855)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:364)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:328)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:161)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:620)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:623)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	... 1 more
+Caused by: org.apache.spark.SparkException: [CANNOT_READ_FILE_FOOTER] Could not read footer for file: file:/tmp/yellow_tripdata_2015-05.parquet. Please ensure that the file is in either ORC or Parquet format. If not, please convert it to a valid format. If the file is in the valid format, please check if it is corrupt. If it is, you can choose to either ignore it or fix the corruption.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.cannotReadFooterForFileError(QueryExecutionErrors.scala:1056)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:456)
+	at org.apache.spark.util.ThreadUtils$.$anonfun$parmap$2(ThreadUtils.scala:380)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+Caused by: java.lang.RuntimeException: file:/tmp/yellow_tripdata_2015-05.parquet is not a Parquet file. Expected magic number at tail, but found [-68, -82, 89, 7]
+	at org.apache.parquet.hadoop.ParquetFileReader.readFooter(ParquetFileReader.java:565)
+	at org.apache.parquet.hadoop.ParquetFileReader.<init>(ParquetFileReader.java:799)
+	at org.apache.parquet.hadoop.ParquetFileReader.open(ParquetFileReader.java:666)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:85)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFooterReader.readFooter(ParquetFooterReader.java:76)
+	at org.apache.spark.sql.execution.datasources.parquet.ParquetFileFormat$.$anonfun$readParquetFootersInParallel$1(ParquetFileFormat.scala:450)
+	... 14 more
+"
+yellow,2015,6,12324936,12014400,310536,2.5195749495169792,376.6887061595917,OK,
+yellow,2015,7,11559666,11275272,284394,2.4602267920197693,541.5399127006531,OK,
+yellow,2015,8,11123123,10849590,273533,2.4591384991427314,507.66629219055176,OK,
+yellow,2015,9,11218122,10944846,273276,2.4360227139622834,658.8880548477173,OK,
+yellow,2015,10,12307333,12004359,302974,2.4617356172941776,447.39457535743713,OK,
+yellow,2015,11,11305240,11015821,289419,2.5600429535330522,534.4112060070038,OK,
+yellow,2015,12,11452996,11163698,289298,2.5259591464102495,350.68982338905334,OK,
+yellow,2016,1,10905067,10622604,282463,2.5901995833679887,326.1509168148041,OK,
+yellow,2016,2,11375412,11084237,291175,2.559687508461232,346.209641456604,OK,
+yellow,2016,3,12203824,11899792,304032,2.4912846989599324,405.782732963562,OK,
+yellow,2016,4,11927996,11630636,297360,2.492958582481081,436.3862190246582,OK,
+yellow,2016,5,11832049,11557487,274562,2.320494108839475,489.70791387557983,OK,
+yellow,2016,6,11131645,10870534,261111,2.34566409546837,391.0545687675476,OK,
+yellow,2016,7,10294080,10041248,252832,2.456091267990923,479.49342918395996,OK,
+yellow,2016,8,9942263,9698408,243855,2.4527112187637763,502.5737135410309,OK,
+yellow,2016,9,10116018,9870541,245477,2.4266168763242613,570.7840337753296,OK,
+yellow,2016,10,10854626,10585832,268794,2.4763082578800963,850.6398084163666,OK,
+yellow,2016,11,10102128,9840234,261894,2.592463686858848,558.8444902896881,OK,
+yellow,2016,12,10446697,10136728,309969,2.9671483723515673,423.009548664093,OK,
+yellow,2017,1,9710820,9440932,269888,2.7792503619673727,327.82598757743835,OK,
+yellow,2017,2,9169775,8918292,251483,2.7425209451704102,218.0408399105072,OK,
+yellow,2017,3,10295441,9996843,298598,2.9002934405626726,302.82907366752625,OK,
+yellow,2017,4,10047135,9788269,258866,2.576515593748865,340.37376737594604,OK,
+yellow,2017,5,10102127,9840709,261418,2.587752064490973,334.45508885383606,OK,
+yellow,2017,6,9656993,9407585,249408,2.582667296124166,249.22941517829895,OK,
+yellow,2017,7,8588486,8371208,217278,2.529875463498456,222.21933150291443,OK,
+yellow,2017,8,8422153,8215276,206877,2.4563434076773483,238.03193306922913,OK,
+yellow,2017,9,8945421,8723660,221761,2.479044865523937,225.41522455215454,OK,
+yellow,2017,10,9768672,9520431,248241,2.541194954646855,241.6730558872223,OK,
+yellow,2017,11,9284803,9024459,260344,2.803979793647749,240.36338090896606,OK,
+yellow,2017,12,9508501,9226656,281845,2.964137039055893,289.0465567111969,OK,
+yellow,2018,1,8760687,8506645,254042,2.8997954155878416,236.72016549110413,OK,
+yellow,2018,2,8492819,8265651,227168,2.6748244605236495,226.79136538505554,OK,
+yellow,2018,3,9431289,9162836,268453,2.846408375355691,289.6594457626343,OK,
+yellow,2018,4,9306216,9054662,251554,2.70307501996515,250.65626502037048,OK,
+yellow,2018,5,9224788,8992860,231928,2.514182439748209,244.5206446647644,OK,
+yellow,2018,6,8714667,8484946,229721,2.6360272859536686,223.44975018501282,OK,
+yellow,2018,7,7851143,7636227,214916,2.7373848623060364,177.74839282035828,OK,
+yellow,2018,8,7855040,7644186,210854,2.684314783883978,183.97325801849365,OK,
+yellow,2018,9,8049094,7831596,217498,2.702142626238431,176.56249260902405,OK,
+yellow,2018,10,8834520,8560239,274281,3.1046508469050953,205.4187572002411,OK,
+yellow,2018,11,8155449,7891754,263695,3.2333596838138523,210.4963641166687,OK,
+yellow,2018,12,8195675,7905825,289850,3.5366214497280577,200.17079830169678,OK,
+yellow,2019,1,7696617,7408481,288136,3.743670758204546,192.86686038970947,OK,
+yellow,2019,2,7049370,6856830,192540,2.73130790411058,191.71027040481567,OK,
+yellow,2019,3,7866620,7675170,191450,2.433700877886564,200.30534148216248,OK,
+yellow,2019,4,7475949,7263497,212452,2.8418064382194155,206.2033281326294,OK,
+yellow,2019,5,7598445,7390753,207692,2.7333487312206644,220.21656155586243,OK,
+yellow,2019,6,6971560,6767661,203899,2.9247255994354204,159.05266070365906,OK,
+yellow,2019,7,6310419,6111093,199326,3.1586809053408342,147.96595430374146,OK,
+yellow,2019,8,6073357,5870373,202984,3.3422043196209277,185.3156397342682,OK,
+yellow,2019,9,6567788,6359334,208454,3.173884418924606,191.38537573814392,OK,
+yellow,2019,10,7213891,6989985,223906,3.1038173435112895,237.88534331321716,OK,
+yellow,2019,11,6878111,6659650,218461,3.1761772963536066,223.69760489463806,OK,
+yellow,2019,12,6896317,6667233,229084,3.321831058520077,326.784574508667,OK,
+yellow,2020,1,6405008,6177335,227673,3.554609143345332,300.8176546096802,OK,
+yellow,2020,2,6299367,6100330,199037,3.159634928398361,298.92790722846985,OK,
+yellow,2020,3,3007687,2893177,114510,3.8072445703292925,173.9470236301422,OK,
+yellow,2020,4,238073,207826,30247,12.704926640148189,16.544785261154175,OK,
+yellow,2020,5,348415,273802,74613,21.414979263234933,31.200600385665894,OK,
+yellow,2020,6,549797,472498,77299,14.05955288952104,31.180540561676025,OK,
+yellow,2020,7,800412,698295,102117,12.758054601880032,64.05118346214294,OK,
+yellow,2020,8,1007286,891900,115386,11.45513786551188,105.72660541534424,OK,
+yellow,2020,9,1341017,1207762,133255,9.936861352242365,66.32263016700745,OK,
+yellow,2020,10,1681132,1526700,154432,9.18619120925662,78.79783654212952,OK,
+yellow,2020,11,1509000,1367365,141635,9.38601722995361,62.15848517417908,OK,
+yellow,2020,12,1461898,1321258,140640,9.62037023102843,78.45102381706238,OK,
+yellow,2021,1,1369769,1227847,141922,10.361017076601966,69.19859576225281,OK,
+yellow,2021,2,1371709,1232207,139502,10.169941292212853,74.82647895812988,OK,
+yellow,2021,3,1925152,1741619,183533,9.53342904871927,92.39451551437378,OK,
+yellow,2021,4,2171187,1976251,194936,8.978314626975935,112.62621212005615,OK,
+yellow,2021,5,2507109,2308790,198319,7.91026636656005,119.81814813613892,OK,
+yellow,2021,6,2834264,2632793,201471,7.108406274080325,135.41081643104553,OK,
+yellow,2021,7,2821746,2605735,216011,7.655224814706922,131.60894870758057,OK,
+yellow,2021,8,2788757,2566756,222001,7.960571681218551,121.53759121894836,OK,
+yellow,2021,9,2963793,2717311,246482,8.316437753918711,223.67869567871094,OK,
+yellow,2021,10,3463504,3224818,238686,6.891460209083055,140.07283353805542,OK,
+yellow,2021,11,3472949,3244882,228067,6.566955057503004,105.4023187160492,OK,
+yellow,2021,12,3214369,3009139,205230,6.384767896902938,109.11523842811584,OK,
+yellow,2022,1,2463931,2312786,151145,6.134303273914732,68.76017475128174,OK,
+yellow,2022,2,2979431,2787584,191847,6.439048261228403,75.50294899940491,OK,
+yellow,2022,3,3627882,3392631,235251,6.48452733578435,144.2071886062622,OK,
+yellow,2022,4,3599920,3363321,236599,6.572340496455477,91.6958384513855,OK,
+yellow,2022,5,3588295,3333963,254332,7.08782304687881,92.33957242965698,OK,
+yellow,2022,6,3558124,3295708,262416,7.3751223959592185,117.18319725990295,OK,
+yellow,2022,7,3174394,2948628,225766,7.112097616111926,81.84134721755981,OK,
+yellow,2022,8,3152677,2932369,220308,6.987966099920798,89.88395190238953,OK,
+yellow,2022,9,3183767,2935827,247940,7.787630187761856,99.82894849777222,OK,
+yellow,2022,10,3675411,3394884,280527,7.632534157404438,108.83673286437988,OK,
+yellow,2022,11,3252717,2997003,255714,7.861550820437191,94.55118322372437,OK,
+yellow,2022,12,3399549,3123260,276289,8.127225111330945,112.49428701400757,OK,
+yellow,2023,1,3066766,2873817,192949,6.291611423890835,77.83386445045471,OK,
+yellow,2023,2,2913955,2724425,189530,6.5042184934221705,93.6934061050415,OK,
+yellow,2023,3,3403766,3192732,211034,6.200014924645232,78.7427396774292,OK,
+yellow,2023,4,3288250,3076482,211768,6.440142933171139,78.01152801513672,OK,
+yellow,2023,5,3513649,3279419,234230,6.666289091482957,92.8660740852356,OK,
+yellow,2023,6,3307234,3080042,227192,6.869547180513988,86.50358009338379,OK,
+yellow,2023,7,2907108,2702001,205107,7.055362236284307,69.39668321609497,OK,
+yellow,2023,8,2824209,2619820,204389,7.237035219418959,66.89650774002075,OK,
+yellow,2023,9,2846722,2593952,252770,8.879335600736567,54.80754899978638,OK,
+yellow,2023,10,3522285,3232574,289711,8.225086839934871,67.84522294998169,OK,
+yellow,2023,11,3339715,3081081,258634,7.7441937410826975,50.24291920661926,OK,
+yellow,2023,12,3376567,3074782,301785,8.937628070167126,46.20215964317322,OK,
+yellow,2024,1,2964624,2718966,245658,8.286312193384388,42.96817874908447,OK,
+yellow,2024,2,3007526,2719491,288035,9.577140812747754,43.91440939903259,OK,
+yellow,2024,3,3582628,3035147,547481,15.281547512049814,55.510801553726196,OK,
+yellow,2024,4,3514289,2985758,528531,15.03948593869201,54.013774156570435,OK,
+yellow,2024,5,3723833,3187194,536639,14.410930887609622,79.81677174568176,OK,
+yellow,2024,6,3539193,2997717,541476,15.299419952514597,65.6278178691864,OK,
+yellow,2024,7,3076903,2670378,406525,13.212148709270327,54.77235007286072,OK,
+yellow,2024,8,2979183,2589720,389463,13.072812244162241,55.829455614089966,OK,
+yellow,2024,9,3633030,3012311,620719,17.085435573061606,62.07244634628296,OK,
+yellow,2024,10,3833771,3288066,545705,14.234157439241937,59.02671957015991,OK,
+yellow,2024,11,3646369,3134670,511699,14.033110746608477,42.22849178314209,OK,
+yellow,2024,12,3668371,3187772,480599,13.101155799127188,49.65478157997131,OK,
+yellow,2025,1,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,2,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,3,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,4,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,5,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,6,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,7,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,8,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,9,0,0,0,0.0,0.0,ERROR,"Column cbd_congestion_fee not found in schema Some(StructType(StructField(VendorID,LongType,true),StructField(tpep_pickup_datetime,TimestampType,true),StructField(tpep_dropoff_datetime,TimestampType,true),StructField(passenger_count,LongType,true),StructField(trip_distance,DoubleType,true),StructField(RatecodeID,LongType,true),StructField(store_and_fwd_flag,StringType,true),StructField(PULocationID,LongType,true),StructField(DOLocationID,LongType,true),StructField(payment_type,LongType,true),StructField(fare_amount,DoubleType,true),StructField(extra,DoubleType,true),StructField(mta_tax,DoubleType,true),StructField(tip_amount,DoubleType,true),StructField(tolls_amount,DoubleType,true),StructField(improvement_surcharge,DoubleType,true),StructField(total_amount,DoubleType,true),StructField(congestion_surcharge,IntegerType,true),StructField(airport_fee,IntegerType,true),StructField(pickup_datetime,TimestampType,true),StructField(dropoff_datetime,TimestampType,true),StructField(service_type,StringType,false),StructField(run_id,StringType,false),StructField(source_year,IntegerType,false),StructField(source_month,IntegerType,false),StructField(ingested_at_utc,StringType,false)))."
+yellow,2025,10,0,0,0,0.0,0.0,ERROR,HTTP Error 403: Forbidden
+yellow,2025,11,0,0,0,0.0,0.0,ERROR,HTTP Error 403: Forbidden
+yellow,2025,12,0,0,0,0.0,0.0,ERROR,HTTP Error 403: Forbidden

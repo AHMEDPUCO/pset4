@@ -1,0 +1,185 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+      # 🚀 OPTIMIZACIONES POSTGRES PARA CARGA MASIVA
+      POSTGRES_SHARED_BUFFERS: 1GB
+      POSTGRES_EFFECTIVE_CACHE_SIZE: 2GB
+      POSTGRES_WORK_MEM: 64MB
+      POSTGRES_MAINTENANCE_WORK_MEM: 256MB
+      POSTGRES_MAX_CONNECTIONS: 200
+      POSTGRES_RANDOM_PAGE_COST: 1.1
+      POSTGRES_EFFECTIVE_IO_CONCURRENCY: 200
+      POSTGRES_MAX_WAL_SIZE: 2GB
+      POSTGRES_CHECKPOINT_TIMEOUT: 30min
+      POSTGRES_CHECKPOINT_COMPLETION_TARGET: 0.9
+      POSTGRES_WAL_BUFFERS: 16MB
+      POSTGRES_MIN_WAL_SIZE: 1GB
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+      # 🚀 CONFIGURACIÓN PERSONALIZADA
+      - ./postgres/postgresql.conf:/etc/postgresql/postgresql.conf:ro
+    command: >
+      postgres 
+      -c config_file=/etc/postgresql/postgresql.conf
+      -c shared_buffers=1GB
+      -c effective_cache_size=2GB
+      -c work_mem=64MB
+      -c maintenance_work_mem=256MB
+      -c max_connections=200
+      -c random_page_cost=1.1
+      -c effective_io_concurrency=200
+      -c max_wal_size=2GB
+      -c checkpoint_timeout=30min
+      -c checkpoint_completion_target=0.9
+      -c wal_buffers=16MB
+      -c min_wal_size=1GB
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER} -d ${PG_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  spark-notebook:
+    build: ./spark-notebook
+    container_name: spark-notebook
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8888:8888"
+    env_file: .env
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      PYSPARK_PYTHON: python3
+      # 🚀 OPTIMIZACIONES SPARK PARA JDBC
+      SPARK_EXECUTOR_MEMORY: "4g"
+      SPARK_DRIVER_MEMORY: "2g"
+      SPARK_EXECUTOR_CORES: "2"
+      SPARK_SQL_SHUFFLE_PARTITIONS: "200"
+      SPARK_SQL_AUTO_BROADCASTJOIN_THRESHOLD: "100485760"
+      SPARK_SQL_ADAPTIVE_ENABLED: "true"
+      SPARK_SQL_ADAPTIVE_COALESCE_PARTITIONS_ENABLED: "true"
+      SPARK_SQL_ADAPTIVE_SKEW_ENABLED: "true"
+      SPARK_DYNAMIC_ALLOCATION_ENABLED: "false"
+      SPARK_EXECUTOR_INSTANCES: "2"
+      SPARK_NETWORK_TIMEOUT: "600s"
+      SPARK_SQL_JDBC_BATCH_INSERT_SIZE: "50000"
+      SPARK_SQL_JDBC_WRITE_BATCH_SIZE: "50000"
+      # Vars para conexión a Postgres desde notebooks
+      PG_HOST: postgres
+      PG_PORT: ${PG_PORT:-5432}
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_SCHEMA_RAW: ${PG_SCHEMA_RAW}
+      PG_SCHEMA_ANALYTICS: ${PG_SCHEMA_ANALYTICS}
+      # 🚀 CONFIGURACIÓN JDBC OPTIMIZADA
+      JDBC_BATCH_SIZE: "50000"
+      JDBC_FETCH_SIZE: "10000"
+      JDBC_REWRITE_BATCHED_INSERTS: "true"
+      
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./spark-config:/opt/spark/conf:ro
+    command: >
+      start-notebook.sh 
+      --NotebookApp.token=''
+      --NotebookApp.notebook_dir='/home/jovyan/work'
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 4G
+
+  obt-builder:
+    build: ./obt-builder
+    container_name: obt-builder
+    depends_on:
+      postgres:
+        condition: service_healthy
+      spark-notebook:
+        condition: service_started
+    env_file: .env
+    environment:
+      # 🚀 CONFIGURACIÓN SPARK PARA OBT-BUILDER
+      SPARK_EXECUTOR_MEMORY: "4g"
+      SPARK_DRIVER_MEMORY: "2g"
+      SPARK_EXECUTOR_CORES: "2"
+      SPARK_SQL_SHUFFLE_PARTITIONS: "100"
+      SPARK_SQL_JDBC_BATCH_INSERT_SIZE: "50000"
+      SPARK_NETWORK_TIMEOUT: "300s"
+
+      # Configuración PostgreSQL
+      PG_HOST: postgres
+      PG_PORT: ${PG_PORT:-5432}
+      PG_DB: ${PG_DB}
+      PG_USER: ${PG_USER}
+      PG_PASSWORD: ${PG_PASSWORD}
+      PG_SCHEMA_RAW: ${PG_SCHEMA_RAW}
+      PG_SCHEMA_ANALYTICS: ${PG_SCHEMA_ANALYTICS}
+
+      # 🚀 CONFIGURACIÓN JDBC OPTIMIZADA
+      JDBC_BATCH_SIZE: "50000"
+      JDBC_FETCH_SIZE: "10000"
+      JDBC_REWRITE_BATCHED_INSERTS: "true"
+      JDBC_APPLICATION_NAME: "obt-builder"
+
+      # 🧠 CONFIG DEL OBT BUILDER (leídas por build_obt.py)
+      OBT_BATCH_SIZE: "500000"
+      OBT_PARALLEL_WORKERS: "8"
+      OBT_ENABLE_SWAP: "true"
+    volumes:
+      - ./obt-builder:/app
+      - ./spark-config:/opt/spark/conf:ro
+    working_dir: /app
+    entrypoint: ["python", "obt.py"]
+    # 👇 Default; el profe podrá hacer: docker compose run obt-builder --mode full ...
+    command: ["--help"]
+    deploy:
+      resources:
+        limits:
+          memory: 6G
+        reservations:
+          memory: 3G
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: pgadmin
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin123}
+    ports:
+      - "5050:80"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+
+volumes:
+  pgdata:
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16

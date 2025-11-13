@@ -1,0 +1,752 @@
+2025-11-09 13:51:12,234 - ERROR - ✗ Error de conexión: parameter "shared_buffers" cannot be changed without restarting the server
+
+2025-11-09 13:51:12,235 - INFO - ✓ Conexión cerrada
+2025-11-09 13:52:09,103 - ERROR - ✗ Error de conexión: parameter "checkpoint_timeout" cannot be changed now
+
+2025-11-09 13:52:09,105 - INFO - ✓ Conexión cerrada
+2025-11-09 13:52:21,315 - ERROR - ✗ Error de conexión: parameter "wal_buffers" cannot be changed without restarting the server
+
+2025-11-09 13:52:21,317 - INFO - ✓ Conexión cerrada
+2025-11-09 13:52:30,356 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-09 13:52:30,357 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-09 13:52:30,358 - INFO - 
+================================================================================
+2025-11-09 13:52:30,359 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-09 13:52:30,360 - INFO - ================================================================================
+2025-11-09 13:52:30,361 - INFO - Servicios: yellow, green
+2025-11-09 13:52:30,362 - INFO - Años: 2021-2024
+2025-11-09 13:52:30,363 - INFO - Meses: Todos
+2025-11-09 13:52:30,364 - INFO - RUN_ID: obt_optimized_20251109_135230
+2025-11-09 13:52:30,365 - INFO - Overwrite: False
+2025-11-09 13:52:30,366 - INFO - ================================================================================
+
+2025-11-09 13:52:30,370 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-09 13:52:30,374 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-09 13:52:30,375 - INFO - 
+================================================================================
+2025-11-09 13:52:30,378 - INFO - Servicio: YELLOW
+2025-11-09 13:52:30,380 - INFO - ================================================================================
+
+2025-11-09 13:56:07,014 - INFO -   ✓ yellow 2021-01: 2,455,664 filas en 110.7s (22176 filas/seg)
+2025-11-09 14:00:52,870 - INFO -   ✓ yellow 2021-02: 1,232,192 filas en 176.5s (6983 filas/seg)
+2025-11-09 14:04:16,222 - INFO -   ✓ yellow 2021-03: 1,741,525 filas en 105.4s (16526 filas/seg)
+2025-11-09 14:07:34,530 - INFO -   ✓ yellow 2021-04: 1,976,128 filas en 110.6s (17863 filas/seg)
+2025-11-09 14:10:56,837 - INFO -   ✓ yellow 2021-05: 2,308,068 filas en 112.7s (20472 filas/seg)
+2025-11-09 14:14:50,586 - INFO -   ✓ yellow 2021-06: 2,632,094 filas en 131.9s (19949 filas/seg)
+2025-11-09 14:18:25,110 - INFO -   ✓ yellow 2021-07: 2,605,135 filas en 122.1s (21334 filas/seg)
+2025-11-09 14:22:02,276 - INFO -   ✓ yellow 2021-08: 2,566,188 filas en 131.8s (19467 filas/seg)
+2025-11-09 14:26:23,406 - INFO -   ✓ yellow 2021-09: 2,716,794 filas en 160.1s (16974 filas/seg)
+2025-11-09 14:31:22,564 - INFO -   ✓ yellow 2021-10: 3,224,296 filas en 183.6s (17566 filas/seg)
+2025-11-09 14:36:50,413 - INFO -   ✓ yellow 2021-11: 3,244,397 filas en 181.4s (17882 filas/seg)
+2025-11-09 14:41:39,333 - INFO -   ✓ yellow 2021-12: 3,008,698 filas en 162.2s (18551 filas/seg)
+2025-11-09 14:45:08,230 - INFO -   ✓ yellow 2022-01: 2,312,520 filas en 113.9s (20308 filas/seg)
+2025-11-09 14:49:00,557 - INFO -   ✓ yellow 2022-02: 2,787,538 filas en 135.4s (20590 filas/seg)
+2025-11-09 14:53:51,416 - INFO -   ✓ yellow 2022-03: 3,392,571 filas en 156.9s (21623 filas/seg)
+2025-11-09 14:58:02,872 - INFO -   ✓ yellow 2022-04: 3,363,248 filas en 153.8s (21864 filas/seg)
+2025-11-09 15:02:24,633 - INFO -   ✓ yellow 2022-05: 3,333,884 filas en 160.4s (20779 filas/seg)
+2025-11-09 15:07:06,244 - INFO -   ✓ yellow 2022-06: 3,295,639 filas en 167.0s (19729 filas/seg)
+2025-11-09 15:10:52,523 - INFO -   ✓ yellow 2022-07: 2,948,567 filas en 129.2s (22817 filas/seg)
+2025-11-09 15:14:35,247 - INFO -   ✓ yellow 2022-08: 2,932,300 filas en 131.0s (22378 filas/seg)
+2025-11-09 15:18:24,976 - INFO -   ✓ yellow 2022-09: 2,935,762 filas en 130.2s (22540 filas/seg)
+2025-11-09 15:23:01,574 - INFO -   ✓ yellow 2022-10: 3,394,802 filas en 168.3s (20170 filas/seg)
+2025-11-09 15:27:05,617 - INFO -   ✓ yellow 2022-11: 2,996,954 filas en 135.8s (22062 filas/seg)
+2025-11-09 15:31:09,114 - INFO -   ✓ yellow 2022-12: 3,123,189 filas en 138.2s (22595 filas/seg)
+2025-11-09 15:34:54,494 - INFO -   ✓ yellow 2023-01: 2,873,777 filas en 130.8s (21976 filas/seg)
+2025-11-09 15:38:42,397 - INFO -   ✓ yellow 2023-02: 2,724,380 filas en 128.2s (21248 filas/seg)
+2025-11-09 15:43:28,255 - INFO -   ✓ yellow 2023-03: 3,192,669 filas en 166.3s (19196 filas/seg)
+2025-11-09 15:47:26,012 - INFO -   ✓ yellow 2023-04: 3,076,420 filas en 132.1s (23293 filas/seg)
+2025-11-09 15:51:30,974 - INFO -   ✓ yellow 2023-05: 3,279,353 filas en 143.7s (22822 filas/seg)
+2025-11-09 15:55:47,015 - INFO -   ✓ yellow 2023-06: 3,079,992 filas en 147.8s (20832 filas/seg)
+2025-11-09 15:59:35,461 - INFO -   ✓ yellow 2023-07: 2,701,952 filas en 123.3s (21917 filas/seg)
+2025-11-09 16:03:39,688 - INFO -   ✓ yellow 2023-08: 2,619,785 filas en 132.1s (19829 filas/seg)
+2025-11-09 16:08:18,987 - INFO -   ✓ yellow 2023-09: 2,593,908 filas en 144.4s (17962 filas/seg)
+2025-11-09 16:12:37,015 - INFO -   ✓ yellow 2023-10: 3,232,533 filas en 146.8s (22013 filas/seg)
+2025-11-09 16:16:40,212 - INFO -   ✓ yellow 2023-11: 3,081,036 filas en 134.8s (22856 filas/seg)
+2025-11-09 16:20:35,393 - INFO -   ✓ yellow 2023-12: 3,074,738 filas en 132.1s (23270 filas/seg)
+2025-11-09 16:24:45,085 - INFO -   ✓ yellow 2024-01: 2,718,931 filas en 135.5s (20064 filas/seg)
+2025-11-09 16:28:44,416 - INFO -   ✓ yellow 2024-02: 2,719,472 filas en 124.5s (21845 filas/seg)
+2025-11-09 16:33:02,548 - INFO -   ✓ yellow 2024-03: 3,035,114 filas en 141.5s (21457 filas/seg)
+2025-11-09 16:37:18,468 - INFO -   ✓ yellow 2024-04: 2,985,737 filas en 133.4s (22374 filas/seg)
+2025-11-09 16:41:31,893 - INFO -   ✓ yellow 2024-05: 3,187,164 filas en 143.5s (22214 filas/seg)
+2025-11-09 16:46:40,319 - INFO -   ✓ yellow 2024-06: 2,997,673 filas en 171.2s (17508 filas/seg)
+2025-11-09 16:51:19,292 - INFO -   ✓ yellow 2024-07: 2,670,336 filas en 124.3s (21485 filas/seg)
+2025-11-09 16:55:34,395 - INFO -   ✓ yellow 2024-08: 2,589,670 filas en 132.0s (19611 filas/seg)
+2025-11-09 16:59:58,310 - INFO -   ✓ yellow 2024-09: 3,012,262 filas en 137.8s (21864 filas/seg)
+2025-11-09 17:04:36,661 - INFO -   ✓ yellow 2024-10: 3,288,022 filas en 161.5s (20365 filas/seg)
+2025-11-09 17:08:51,754 - INFO -   ✓ yellow 2024-11: 3,134,633 filas en 140.3s (22344 filas/seg)
+2025-11-09 17:13:13,992 - INFO -   ✓ yellow 2024-12: 3,187,733 filas en 142.7s (22336 filas/seg)
+2025-11-09 17:13:14,017 - INFO - 
+================================================================================
+2025-11-09 17:13:14,018 - INFO - Servicio: GREEN
+2025-11-09 17:13:14,018 - INFO - ================================================================================
+
+2025-11-09 17:14:11,566 - INFO -   ✓ green 2021-01: 37,522 filas en 7.3s (5126 filas/seg)
+2025-11-09 17:15:07,130 - INFO -   ✓ green 2021-02: 33,069 filas en 6.6s (5000 filas/seg)
+2025-11-09 17:16:03,953 - INFO -   ✓ green 2021-03: 40,180 filas en 7.3s (5485 filas/seg)
+2025-11-09 17:17:01,255 - INFO -   ✓ green 2021-04: 41,621 filas en 7.5s (5544 filas/seg)
+2025-11-09 17:17:58,409 - INFO -   ✓ green 2021-05: 45,871 filas en 7.7s (5992 filas/seg)
+2025-11-09 17:18:55,550 - INFO -   ✓ green 2021-06: 50,052 filas en 7.4s (6736 filas/seg)
+2025-11-09 17:19:53,731 - INFO -   ✓ green 2021-07: 47,100 filas en 7.7s (6133 filas/seg)
+2025-11-09 17:20:51,398 - INFO -   ✓ green 2021-08: 46,763 filas en 7.4s (6333 filas/seg)
+2025-11-09 17:21:49,220 - INFO -   ✓ green 2021-09: 56,521 filas en 8.1s (7020 filas/seg)
+2025-11-09 17:22:48,835 - INFO -   ✓ green 2021-10: 68,955 filas en 8.5s (8095 filas/seg)
+2025-11-09 17:23:48,462 - INFO -   ✓ green 2021-11: 69,411 filas en 8.3s (8394 filas/seg)
+2025-11-09 17:24:47,873 - INFO -   ✓ green 2021-12: 69,499 filas en 8.1s (8560 filas/seg)
+2025-11-09 17:25:47,328 - INFO -   ✓ green 2022-01: 51,684 filas en 8.1s (6343 filas/seg)
+2025-11-09 17:26:47,701 - INFO -   ✓ green 2022-02: 57,130 filas en 8.2s (6992 filas/seg)
+2025-11-09 17:27:49,241 - INFO -   ✓ green 2022-03: 64,897 filas en 8.7s (7490 filas/seg)
+2025-11-09 17:28:51,744 - INFO -   ✓ green 2022-04: 62,141 filas en 8.6s (7217 filas/seg)
+2025-11-09 17:29:52,906 - INFO -   ✓ green 2022-05: 60,703 filas en 8.8s (6934 filas/seg)
+2025-11-09 17:30:51,752 - INFO -   ✓ green 2022-06: 58,391 filas en 8.2s (7135 filas/seg)
+2025-11-09 17:31:50,674 - INFO -   ✓ green 2022-07: 51,869 filas en 8.0s (6453 filas/seg)
+2025-11-09 17:32:49,658 - INFO -   ✓ green 2022-08: 54,220 filas en 7.6s (7157 filas/seg)
+2025-11-09 17:33:50,179 - INFO -   ✓ green 2022-09: 56,321 filas en 8.3s (6750 filas/seg)
+2025-11-09 17:34:49,380 - INFO -   ✓ green 2022-10: 57,152 filas en 8.4s (6833 filas/seg)
+2025-11-09 17:35:48,019 - INFO -   ✓ green 2022-11: 51,888 filas en 7.9s (6567 filas/seg)
+2025-11-09 17:36:47,953 - INFO -   ✓ green 2022-12: 60,431 filas en 8.4s (7237 filas/seg)
+2025-11-09 17:37:47,676 - INFO -   ✓ green 2023-01: 59,800 filas en 8.2s (7249 filas/seg)
+2025-11-09 17:38:46,744 - INFO -   ✓ green 2023-02: 56,363 filas en 8.1s (6957 filas/seg)
+2025-11-09 17:39:45,746 - INFO -   ✓ green 2023-03: 63,227 filas en 8.3s (7648 filas/seg)
+2025-11-09 17:40:45,198 - INFO -   ✓ green 2023-04: 56,973 filas en 8.1s (7026 filas/seg)
+2025-11-09 17:41:45,084 - INFO -   ✓ green 2023-05: 60,101 filas en 8.3s (7229 filas/seg)
+2025-11-09 17:42:44,335 - INFO -   ✓ green 2023-06: 56,202 filas en 8.4s (6728 filas/seg)
+2025-11-09 17:43:44,233 - INFO -   ✓ green 2023-07: 52,314 filas en 8.1s (6497 filas/seg)
+2025-11-09 17:44:43,892 - INFO -   ✓ green 2023-08: 52,476 filas en 8.1s (6513 filas/seg)
+2025-11-09 17:45:42,856 - INFO -   ✓ green 2023-09: 56,494 filas en 8.1s (6977 filas/seg)
+2025-11-09 17:46:42,504 - INFO -   ✓ green 2023-10: 56,953 filas en 8.3s (6887 filas/seg)
+2025-11-09 17:47:42,423 - INFO -   ✓ green 2023-11: 55,199 filas en 8.1s (6783 filas/seg)
+2025-11-09 17:48:41,842 - INFO -   ✓ green 2023-12: 55,236 filas en 7.5s (7347 filas/seg)
+2025-11-09 17:49:41,421 - INFO -   ✓ green 2024-01: 49,416 filas en 7.9s (6268 filas/seg)
+2025-11-09 17:50:40,655 - INFO -   ✓ green 2024-02: 47,031 filas en 7.8s (6051 filas/seg)
+2025-11-09 17:51:39,825 - INFO -   ✓ green 2024-03: 51,461 filas en 7.7s (6643 filas/seg)
+2025-11-09 17:52:39,261 - INFO -   ✓ green 2024-04: 50,355 filas en 8.0s (6314 filas/seg)
+2025-11-09 17:53:39,010 - INFO -   ✓ green 2024-05: 54,959 filas en 7.8s (7035 filas/seg)
+2025-11-09 17:54:38,608 - INFO -   ✓ green 2024-06: 49,159 filas en 8.0s (6117 filas/seg)
+2025-11-09 17:55:38,336 - INFO -   ✓ green 2024-07: 46,332 filas en 7.6s (6080 filas/seg)
+2025-11-09 17:56:42,000 - INFO -   ✓ green 2024-08: 46,382 filas en 7.8s (5971 filas/seg)
+2025-11-09 17:57:42,030 - INFO -   ✓ green 2024-09: 48,822 filas en 8.0s (6134 filas/seg)
+2025-11-09 17:58:42,082 - INFO -   ✓ green 2024-10: 50,896 filas en 8.1s (6250 filas/seg)
+2025-11-09 17:59:41,349 - INFO -   ✓ green 2024-11: 47,061 filas en 7.6s (6166 filas/seg)
+2025-11-09 18:00:41,090 - INFO -   ✓ green 2024-12: 48,123 filas en 7.9s (6094 filas/seg)
+2025-11-09 18:00:41,122 - ERROR - 
+✗ Error fatal: column "trip_duration_min" specified more than once
+
+2025-11-09 18:00:41,365 - INFO - ✓ Conexión cerrada
+2025-11-09 21:27:09,971 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-09 21:27:09,974 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-09 21:27:09,975 - INFO - 
+================================================================================
+2025-11-09 21:27:09,977 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-09 21:27:09,978 - INFO - ================================================================================
+2025-11-09 21:27:09,979 - INFO - Servicios: yellow, green
+2025-11-09 21:27:09,980 - INFO - Años: 2021-2024
+2025-11-09 21:27:09,981 - INFO - Meses: Todos
+2025-11-09 21:27:09,982 - INFO - RUN_ID: obt_optimized_20251109_212709
+2025-11-09 21:27:09,983 - INFO - Overwrite: False
+2025-11-09 21:27:09,985 - INFO - ================================================================================
+
+2025-11-09 21:27:09,994 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-09 21:27:10,005 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-09 21:27:10,006 - INFO - 
+================================================================================
+2025-11-09 21:27:10,006 - INFO - Servicio: YELLOW
+2025-11-09 21:27:10,007 - INFO - ================================================================================
+
+2025-11-09 21:30:37,031 - INFO -   [SKIP] yellow 2021-01: Ya existe (2,455,664 filas)
+2025-11-09 21:33:40,461 - INFO -   [SKIP] yellow 2021-02: Ya existe (1,232,192 filas)
+2025-11-09 21:36:14,067 - INFO -   [SKIP] yellow 2021-03: Ya existe (1,741,525 filas)
+2025-11-09 21:38:31,037 - INFO -   [SKIP] yellow 2021-04: Ya existe (1,976,128 filas)
+2025-11-09 21:40:46,848 - INFO -   [SKIP] yellow 2021-05: Ya existe (2,308,068 filas)
+2025-11-09 23:06:50,734 - INFO -   [SKIP] yellow 2021-06: Ya existe (2,632,094 filas)
+2025-11-09 23:10:28,771 - INFO -   [SKIP] yellow 2021-07: Ya existe (2,605,135 filas)
+2025-11-09 23:11:38,496 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-09 23:11:38,497 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-09 23:11:38,498 - INFO - 
+================================================================================
+2025-11-09 23:11:38,498 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-09 23:11:38,499 - INFO - ================================================================================
+2025-11-09 23:11:38,500 - INFO - Servicios: yellow, green
+2025-11-09 23:11:38,500 - INFO - Años: 2021-2024
+2025-11-09 23:11:38,501 - INFO - Meses: Todos
+2025-11-09 23:11:38,503 - INFO - RUN_ID: obt_optimized_20251109_231138
+2025-11-09 23:11:38,504 - INFO - Overwrite: False
+2025-11-09 23:11:38,504 - INFO - ================================================================================
+
+2025-11-09 23:11:38,513 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-09 23:11:38,522 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-09 23:11:38,523 - INFO - 
+================================================================================
+2025-11-09 23:11:38,523 - INFO - Servicio: YELLOW
+2025-11-09 23:11:38,524 - INFO - ================================================================================
+
+2025-11-09 23:25:30,204 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-09 23:25:30,207 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-09 23:25:30,209 - INFO - 
+================================================================================
+2025-11-09 23:25:30,210 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-09 23:25:30,212 - INFO - ================================================================================
+2025-11-09 23:25:30,213 - INFO - Servicios: yellow, green
+2025-11-09 23:25:30,215 - INFO - Años: 2021-2024
+2025-11-09 23:25:30,216 - INFO - Meses: Todos
+2025-11-09 23:25:30,218 - INFO - RUN_ID: obt_optimized_20251109_232530
+2025-11-09 23:25:30,220 - INFO - Overwrite: False
+2025-11-09 23:25:30,221 - INFO - ================================================================================
+
+2025-11-09 23:25:30,239 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-09 23:25:30,258 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-09 23:25:30,259 - INFO - 
+================================================================================
+2025-11-09 23:25:30,260 - INFO - Servicio: YELLOW
+2025-11-09 23:25:30,262 - INFO - ================================================================================
+
+2025-11-09 23:28:17,688 - INFO -   [SKIP] yellow 2021-01: Ya existe (2,455,664 filas)
+2025-11-09 23:30:43,858 - INFO -   [SKIP] yellow 2021-02: Ya existe (1,232,192 filas)
+2025-11-09 23:32:47,304 - INFO -   [SKIP] yellow 2021-03: Ya existe (1,741,525 filas)
+2025-11-09 23:34:55,459 - INFO -   [SKIP] yellow 2021-04: Ya existe (1,976,128 filas)
+2025-11-09 23:37:04,231 - INFO -   [SKIP] yellow 2021-05: Ya existe (2,308,068 filas)
+2025-11-09 23:39:15,044 - INFO -   [SKIP] yellow 2021-06: Ya existe (2,632,094 filas)
+2025-11-09 23:41:25,889 - INFO -   [SKIP] yellow 2021-07: Ya existe (2,605,135 filas)
+2025-11-09 23:43:37,907 - INFO -   [SKIP] yellow 2021-08: Ya existe (2,566,188 filas)
+2025-11-09 23:45:50,584 - INFO -   [SKIP] yellow 2021-09: Ya existe (2,716,794 filas)
+2025-11-09 23:48:04,431 - INFO -   [SKIP] yellow 2021-10: Ya existe (3,224,296 filas)
+2025-11-09 23:50:18,052 - INFO -   [SKIP] yellow 2021-11: Ya existe (3,244,397 filas)
+2025-11-09 23:52:40,125 - INFO -   [SKIP] yellow 2021-12: Ya existe (3,008,698 filas)
+2025-11-09 23:55:05,237 - INFO -   [SKIP] yellow 2022-01: Ya existe (2,312,520 filas)
+2025-11-09 23:58:14,814 - INFO -   [SKIP] yellow 2022-02: Ya existe (2,787,538 filas)
+2025-11-10 00:01:24,879 - INFO -   [SKIP] yellow 2022-03: Ya existe (3,392,571 filas)
+2025-11-10 00:04:41,018 - INFO -   [SKIP] yellow 2022-04: Ya existe (3,363,248 filas)
+2025-11-10 00:07:37,671 - INFO -   [SKIP] yellow 2022-05: Ya existe (3,333,884 filas)
+2025-11-10 00:10:21,171 - INFO -   [SKIP] yellow 2022-06: Ya existe (3,295,639 filas)
+2025-11-10 00:13:24,583 - INFO -   [SKIP] yellow 2022-07: Ya existe (2,948,567 filas)
+2025-11-10 00:16:19,434 - INFO -   [SKIP] yellow 2022-08: Ya existe (2,932,300 filas)
+2025-11-10 00:19:02,684 - INFO -   [SKIP] yellow 2022-09: Ya existe (2,935,762 filas)
+2025-11-10 00:22:08,915 - INFO -   [SKIP] yellow 2022-10: Ya existe (3,394,802 filas)
+2025-11-10 00:25:03,999 - INFO -   [SKIP] yellow 2022-11: Ya existe (2,996,954 filas)
+2025-11-10 00:27:54,271 - INFO -   [SKIP] yellow 2022-12: Ya existe (3,123,189 filas)
+2025-11-10 00:30:25,783 - INFO -   [SKIP] yellow 2023-01: Ya existe (2,873,777 filas)
+2025-11-10 00:32:38,899 - INFO -   [SKIP] yellow 2023-02: Ya existe (2,724,380 filas)
+2025-11-10 00:34:58,179 - INFO -   [SKIP] yellow 2023-03: Ya existe (3,192,669 filas)
+2025-11-10 00:37:12,681 - INFO -   [SKIP] yellow 2023-04: Ya existe (3,076,420 filas)
+2025-11-10 00:39:28,678 - INFO -   [SKIP] yellow 2023-05: Ya existe (3,279,353 filas)
+2025-11-10 00:41:43,553 - INFO -   [SKIP] yellow 2023-06: Ya existe (3,079,992 filas)
+2025-11-10 00:43:57,704 - INFO -   [SKIP] yellow 2023-07: Ya existe (2,701,952 filas)
+2025-11-10 00:46:15,860 - INFO -   [SKIP] yellow 2023-08: Ya existe (2,619,785 filas)
+2025-11-10 00:48:37,793 - INFO -   [SKIP] yellow 2023-09: Ya existe (2,593,908 filas)
+2025-11-10 00:50:49,435 - INFO -   [SKIP] yellow 2023-10: Ya existe (3,232,533 filas)
+2025-11-10 00:53:02,302 - INFO -   [SKIP] yellow 2023-11: Ya existe (3,081,036 filas)
+2025-11-10 00:55:15,522 - INFO -   [SKIP] yellow 2023-12: Ya existe (3,074,738 filas)
+2025-11-10 00:57:29,683 - INFO -   [SKIP] yellow 2024-01: Ya existe (2,718,931 filas)
+2025-11-10 00:59:43,819 - INFO -   [SKIP] yellow 2024-02: Ya existe (2,719,472 filas)
+2025-11-10 01:01:55,377 - INFO -   [SKIP] yellow 2024-03: Ya existe (3,035,114 filas)
+2025-11-10 01:04:07,655 - INFO -   [SKIP] yellow 2024-04: Ya existe (2,985,737 filas)
+2025-11-10 01:06:21,388 - INFO -   [SKIP] yellow 2024-05: Ya existe (3,187,164 filas)
+2025-11-10 01:08:40,856 - INFO -   [SKIP] yellow 2024-06: Ya existe (2,997,673 filas)
+2025-11-10 01:10:54,233 - INFO -   [SKIP] yellow 2024-07: Ya existe (2,670,336 filas)
+2025-11-10 01:13:04,048 - INFO -   [SKIP] yellow 2024-08: Ya existe (2,589,670 filas)
+2025-11-10 01:15:11,004 - INFO -   [SKIP] yellow 2024-09: Ya existe (3,012,262 filas)
+2025-11-10 01:17:18,929 - INFO -   [SKIP] yellow 2024-10: Ya existe (3,288,022 filas)
+2025-11-10 01:19:26,017 - INFO -   [SKIP] yellow 2024-11: Ya existe (3,134,633 filas)
+2025-11-10 01:21:33,413 - INFO -   [SKIP] yellow 2024-12: Ya existe (3,187,733 filas)
+2025-11-10 01:21:33,424 - INFO - 
+================================================================================
+2025-11-10 01:21:33,424 - INFO - Servicio: GREEN
+2025-11-10 01:21:33,425 - INFO - ================================================================================
+
+2025-11-10 01:22:26,576 - INFO -   [SKIP] green 2021-01: Ya existe (37,522 filas)
+2025-11-10 01:23:34,604 - INFO -   [SKIP] green 2021-02: Ya existe (33,069 filas)
+2025-11-10 01:24:38,775 - INFO -   [SKIP] green 2021-03: Ya existe (40,180 filas)
+2025-11-10 01:25:36,913 - INFO -   [SKIP] green 2021-04: Ya existe (41,621 filas)
+2025-11-10 01:26:42,781 - INFO -   [SKIP] green 2021-05: Ya existe (45,871 filas)
+2025-11-10 01:28:01,581 - INFO -   [SKIP] green 2021-06: Ya existe (50,052 filas)
+2025-11-10 01:29:13,931 - INFO -   [SKIP] green 2021-07: Ya existe (47,100 filas)
+2025-11-10 01:30:27,881 - INFO -   [SKIP] green 2021-08: Ya existe (46,763 filas)
+2025-11-10 01:31:41,310 - INFO -   [SKIP] green 2021-09: Ya existe (56,521 filas)
+2025-11-10 01:32:45,504 - INFO -   [SKIP] green 2021-10: Ya existe (68,955 filas)
+2025-11-10 01:34:17,519 - INFO -   [SKIP] green 2021-11: Ya existe (69,411 filas)
+2025-11-10 01:35:31,814 - INFO -   [SKIP] green 2021-12: Ya existe (69,499 filas)
+2025-11-10 01:36:48,934 - INFO -   [SKIP] green 2022-01: Ya existe (51,684 filas)
+2025-11-10 01:38:11,516 - INFO -   [SKIP] green 2022-02: Ya existe (57,130 filas)
+2025-11-10 01:39:29,434 - INFO -   [SKIP] green 2022-03: Ya existe (64,897 filas)
+2025-11-10 01:40:57,436 - INFO -   [SKIP] green 2022-04: Ya existe (62,141 filas)
+2025-11-10 01:42:12,435 - INFO -   [SKIP] green 2022-05: Ya existe (60,703 filas)
+2025-11-10 01:43:26,085 - INFO -   [SKIP] green 2022-06: Ya existe (58,391 filas)
+2025-11-10 01:44:40,810 - INFO -   [SKIP] green 2022-07: Ya existe (51,869 filas)
+2025-11-10 01:45:51,529 - INFO -   [SKIP] green 2022-08: Ya existe (54,220 filas)
+2025-11-10 01:47:00,760 - INFO -   [SKIP] green 2022-09: Ya existe (56,321 filas)
+2025-11-10 01:48:09,705 - INFO -   [SKIP] green 2022-10: Ya existe (57,152 filas)
+2025-11-10 01:49:20,629 - INFO -   [SKIP] green 2022-11: Ya existe (51,888 filas)
+2025-11-10 01:50:36,536 - INFO -   [SKIP] green 2022-12: Ya existe (60,431 filas)
+2025-11-10 01:51:47,267 - INFO -   [SKIP] green 2023-01: Ya existe (59,800 filas)
+2025-11-10 01:52:57,957 - INFO -   [SKIP] green 2023-02: Ya existe (56,363 filas)
+2025-11-10 01:54:11,531 - INFO -   [SKIP] green 2023-03: Ya existe (63,227 filas)
+2025-11-10 01:55:30,980 - INFO -   [SKIP] green 2023-04: Ya existe (56,973 filas)
+2025-11-10 01:56:44,591 - INFO -   [SKIP] green 2023-05: Ya existe (60,101 filas)
+2025-11-10 01:57:58,395 - INFO -   [SKIP] green 2023-06: Ya existe (56,202 filas)
+2025-11-10 01:59:06,461 - INFO -   [SKIP] green 2023-07: Ya existe (52,314 filas)
+2025-11-10 02:00:16,762 - INFO -   [SKIP] green 2023-08: Ya existe (52,476 filas)
+2025-11-10 02:01:33,206 - INFO -   [SKIP] green 2023-09: Ya existe (56,494 filas)
+2025-11-10 02:03:18,880 - INFO -   [SKIP] green 2023-10: Ya existe (56,953 filas)
+2025-11-10 02:05:27,608 - INFO -   [SKIP] green 2023-11: Ya existe (55,199 filas)
+2025-11-10 02:08:25,526 - INFO -   [SKIP] green 2023-12: Ya existe (55,236 filas)
+2025-11-10 02:11:16,095 - INFO -   [SKIP] green 2024-01: Ya existe (49,416 filas)
+2025-11-10 02:13:46,774 - INFO -   [SKIP] green 2024-02: Ya existe (47,031 filas)
+2025-11-10 02:15:06,094 - INFO -   [SKIP] green 2024-03: Ya existe (51,461 filas)
+2025-11-10 02:16:16,002 - INFO -   [SKIP] green 2024-04: Ya existe (50,355 filas)
+2025-11-10 02:17:26,872 - INFO -   [SKIP] green 2024-05: Ya existe (54,959 filas)
+2025-11-10 02:18:43,036 - INFO -   [SKIP] green 2024-06: Ya existe (49,159 filas)
+2025-11-10 02:19:58,892 - INFO -   [SKIP] green 2024-07: Ya existe (46,332 filas)
+2025-11-10 02:21:03,695 - INFO -   [SKIP] green 2024-08: Ya existe (46,382 filas)
+2025-11-10 02:21:57,513 - INFO -   [SKIP] green 2024-09: Ya existe (48,822 filas)
+2025-11-10 02:22:52,266 - INFO -   [SKIP] green 2024-10: Ya existe (50,896 filas)
+2025-11-10 02:23:47,485 - INFO -   [SKIP] green 2024-11: Ya existe (47,061 filas)
+2025-11-10 02:24:42,878 - INFO -   [SKIP] green 2024-12: Ya existe (48,123 filas)
+2025-11-10 02:24:42,884 - INFO - 
+================================================================================
+2025-11-10 02:24:42,885 - INFO - RESUMEN BY-PARTITION OPTIMIZADO
+2025-11-10 02:24:42,885 - INFO - ================================================================================
+2025-11-10 02:24:42,886 - INFO - Particiones procesadas: 0
+2025-11-10 02:24:42,887 - INFO - Particiones omitidas: 96
+2025-11-10 02:24:42,887 - INFO - Total filas insertadas: 0
+2025-11-10 02:24:42,895 - INFO - Tiempo total: 10752.7s
+2025-11-10 02:24:42,895 - INFO - ================================================================================
+
+2025-11-10 02:24:42,898 - INFO - 
+================================================================================
+2025-11-10 02:24:42,899 - INFO - RESUMEN OBT COMPLETO
+2025-11-10 02:24:42,899 - INFO - ================================================================================
+
+2025-11-10 02:25:06,499 - INFO - Total filas en OBT: 140,150,169
+
+2025-11-10 02:25:29,705 - INFO - Por servicio:
+2025-11-10 02:25:29,707 - INFO -   green: 2,564,726
+2025-11-10 02:25:29,707 - INFO -   yellow: 137,585,443
+2025-11-10 02:25:51,866 - INFO - 
+Por año:
+2025-11-10 02:25:51,867 - INFO -   2020: 33
+2025-11-10 02:25:51,868 - INFO -   2021: 30,317,687
+2025-11-10 02:25:51,869 - INFO -   2022: 37,503,847
+2025-11-10 02:25:51,869 - INFO -   2023: 36,211,866
+2025-11-10 02:25:51,869 - INFO -   2024: 36,116,721
+2025-11-10 02:25:51,870 - INFO -   2025: 15
+2025-11-10 02:25:51,893 - INFO - 
+Tamaños:
+2025-11-10 02:25:51,894 - INFO -   Tabla: 49 GB
+2025-11-10 02:25:51,894 - INFO -   Índices: 3016 MB
+2025-11-10 02:25:51,894 - INFO -   Total: 51 GB
+2025-11-10 02:25:51,895 - INFO - 
+Vistas disponibles:
+2025-11-10 02:25:51,895 - INFO -   • analytics.obt_trips_with_metrics - Todas las métricas derivadas
+2025-11-10 02:25:51,898 - INFO - 
+================================================================================
+
+2025-11-10 02:25:51,899 - INFO - ✓ OBT Builder OPTIMIZADO completado exitosamente
+
+2025-11-10 02:25:51,908 - INFO - ✓ Conexión cerrada
+2025-11-10 10:22:59,976 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-10 10:22:59,977 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-10 10:22:59,978 - INFO - 
+================================================================================
+2025-11-10 10:22:59,979 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-10 10:22:59,980 - INFO - ================================================================================
+2025-11-10 10:22:59,981 - INFO - Servicios: yellow, green
+2025-11-10 10:22:59,982 - INFO - Años: 2021-2024
+2025-11-10 10:22:59,983 - INFO - Meses: Todos
+2025-11-10 10:22:59,984 - INFO - RUN_ID: obt_optimized_20251110_102259
+2025-11-10 10:22:59,985 - INFO - Overwrite: False
+2025-11-10 10:22:59,986 - INFO - ================================================================================
+
+2025-11-10 10:22:59,989 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-10 10:22:59,991 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-10 10:22:59,992 - INFO - 
+================================================================================
+2025-11-10 10:22:59,993 - INFO - Servicio: YELLOW
+2025-11-10 10:22:59,994 - INFO - ================================================================================
+
+2025-11-10 10:29:01,235 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-10 10:29:01,241 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-10 10:29:01,243 - INFO - 
+================================================================================
+2025-11-10 10:29:01,244 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-10 10:29:01,247 - INFO - ================================================================================
+2025-11-10 10:29:01,249 - INFO - Servicios: yellow, green
+2025-11-10 10:29:01,250 - INFO - Años: 2021-2021
+2025-11-10 10:29:01,251 - INFO - Meses: Todos
+2025-11-10 10:29:01,252 - INFO - RUN_ID: obt_optimized_20251110_102901
+2025-11-10 10:29:01,253 - INFO - Overwrite: False
+2025-11-10 10:29:01,254 - INFO - ================================================================================
+
+2025-11-10 10:29:01,257 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-10 10:29:01,263 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-10 10:29:01,265 - INFO - 
+================================================================================
+2025-11-10 10:29:01,267 - INFO - Servicio: YELLOW
+2025-11-10 10:29:01,268 - INFO - ================================================================================
+
+2025-11-10 10:32:29,573 - INFO -   ✓ yellow 2021-01: 1,227,832 filas en 119.5s (10274 filas/seg)
+2025-11-10 21:12:22,760 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-10 21:12:22,761 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-10 21:12:22,762 - INFO - 
+================================================================================
+2025-11-10 21:12:22,763 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-10 21:12:22,763 - INFO - ================================================================================
+2025-11-10 21:12:22,764 - INFO - Servicios: yellow, green
+2025-11-10 21:12:22,765 - INFO - Años: 20222-2024
+2025-11-10 21:12:22,766 - INFO - Meses: Todos
+2025-11-10 21:12:22,767 - INFO - RUN_ID: obt_optimized_20251110_211222
+2025-11-10 21:12:22,768 - INFO - Overwrite: False
+2025-11-10 21:12:22,769 - INFO - ================================================================================
+
+2025-11-10 21:12:22,772 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-10 21:12:22,776 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-10 21:12:22,778 - INFO - 
+================================================================================
+2025-11-10 21:12:22,779 - INFO - Servicio: YELLOW
+2025-11-10 21:12:22,780 - INFO - ================================================================================
+
+2025-11-10 21:12:22,781 - INFO - 
+================================================================================
+2025-11-10 21:12:22,782 - INFO - Servicio: GREEN
+2025-11-10 21:12:22,783 - INFO - ================================================================================
+
+2025-11-10 21:12:22,783 - INFO - 
+================================================================================
+2025-11-10 21:12:22,784 - INFO - RESUMEN BY-PARTITION OPTIMIZADO
+2025-11-10 21:12:22,785 - INFO - ================================================================================
+2025-11-10 21:12:22,786 - INFO - Particiones procesadas: 0
+2025-11-10 21:12:22,787 - INFO - Particiones omitidas: 0
+2025-11-10 21:12:22,787 - INFO - Total filas insertadas: 0
+2025-11-10 21:12:22,789 - INFO - Tiempo total: 0.0s
+2025-11-10 21:12:22,790 - INFO - ================================================================================
+
+2025-11-10 21:12:22,791 - INFO - 
+================================================================================
+2025-11-10 21:12:22,792 - INFO - RESUMEN OBT COMPLETO
+2025-11-10 21:12:22,793 - INFO - ================================================================================
+
+2025-11-10 21:12:25,317 - INFO - Total filas en OBT: 1,227,832
+
+2025-11-10 21:12:25,474 - INFO - Por servicio:
+2025-11-10 21:12:25,475 - INFO -   yellow: 1,227,832
+2025-11-10 21:12:25,603 - INFO - 
+Por año:
+2025-11-10 21:12:25,604 - INFO -   2020: 16
+2025-11-10 21:12:25,604 - INFO -   2021: 1,227,816
+2025-11-10 21:12:25,621 - INFO - 
+Tamaños:
+2025-11-10 21:12:25,622 - INFO -   Tabla: 435 MB
+2025-11-10 21:12:25,623 - INFO -   Índices: 26 MB
+2025-11-10 21:12:25,624 - INFO -   Total: 462 MB
+2025-11-10 21:12:25,625 - INFO - 
+Vistas disponibles:
+2025-11-10 21:12:25,626 - INFO -   • analytics.obt_trips_with_metrics - Todas las métricas derivadas
+2025-11-10 21:12:25,627 - INFO - 
+================================================================================
+
+2025-11-10 21:12:25,628 - INFO - ✓ OBT Builder OPTIMIZADO completado exitosamente
+
+2025-11-10 21:12:25,629 - INFO - ✓ Conexión cerrada
+2025-11-10 21:12:46,040 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-10 21:12:46,042 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-10 21:12:46,043 - INFO - 
+================================================================================
+2025-11-10 21:12:46,044 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-10 21:12:46,046 - INFO - ================================================================================
+2025-11-10 21:12:46,047 - INFO - Servicios: yellow, green
+2025-11-10 21:12:46,048 - INFO - Años: 20222-2024
+2025-11-10 21:12:46,050 - INFO - Meses: Todos
+2025-11-10 21:12:46,052 - INFO - RUN_ID: obt_optimized_20251110_211246
+2025-11-10 21:12:46,053 - INFO - Overwrite: False
+2025-11-10 21:12:46,055 - INFO - ================================================================================
+
+2025-11-10 21:12:46,057 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-10 21:12:46,060 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-10 21:12:46,061 - INFO - 
+================================================================================
+2025-11-10 21:12:46,062 - INFO - Servicio: YELLOW
+2025-11-10 21:12:46,064 - INFO - ================================================================================
+
+2025-11-10 21:12:46,065 - INFO - 
+================================================================================
+2025-11-10 21:12:46,067 - INFO - Servicio: GREEN
+2025-11-10 21:12:46,068 - INFO - ================================================================================
+
+2025-11-10 21:12:46,070 - INFO - 
+================================================================================
+2025-11-10 21:12:46,071 - INFO - RESUMEN BY-PARTITION OPTIMIZADO
+2025-11-10 21:12:46,073 - INFO - ================================================================================
+2025-11-10 21:12:46,074 - INFO - Particiones procesadas: 0
+2025-11-10 21:12:46,075 - INFO - Particiones omitidas: 0
+2025-11-10 21:12:46,076 - INFO - Total filas insertadas: 0
+2025-11-10 21:12:46,077 - INFO - Tiempo total: 0.0s
+2025-11-10 21:12:46,078 - INFO - ================================================================================
+
+2025-11-10 21:12:46,079 - INFO - 
+================================================================================
+2025-11-10 21:12:46,083 - INFO - RESUMEN OBT COMPLETO
+2025-11-10 21:12:46,084 - INFO - ================================================================================
+
+2025-11-10 21:12:46,494 - INFO - Total filas en OBT: 1,227,832
+
+2025-11-10 21:12:46,616 - INFO - Por servicio:
+2025-11-10 21:12:46,617 - INFO -   yellow: 1,227,832
+2025-11-10 21:12:46,716 - INFO - 
+Por año:
+2025-11-10 21:12:46,717 - INFO -   2020: 16
+2025-11-10 21:12:46,718 - INFO -   2021: 1,227,816
+2025-11-10 21:12:46,719 - INFO - 
+Tamaños:
+2025-11-10 21:12:46,720 - INFO -   Tabla: 435 MB
+2025-11-10 21:12:46,720 - INFO -   Índices: 26 MB
+2025-11-10 21:12:46,728 - INFO -   Total: 462 MB
+2025-11-10 21:12:46,741 - INFO - 
+Vistas disponibles:
+2025-11-10 21:12:46,745 - INFO -   • analytics.obt_trips_with_metrics - Todas las métricas derivadas
+2025-11-10 21:12:46,749 - INFO - 
+================================================================================
+
+2025-11-10 21:12:46,752 - INFO - ✓ OBT Builder OPTIMIZADO completado exitosamente
+
+2025-11-10 21:12:46,753 - INFO - ✓ Conexión cerrada
+2025-11-10 21:12:56,437 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-10 21:12:56,438 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-10 21:12:56,439 - INFO - 
+================================================================================
+2025-11-10 21:12:56,444 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-10 21:12:56,445 - INFO - ================================================================================
+2025-11-10 21:12:56,446 - INFO - Servicios: yellow, green
+2025-11-10 21:12:56,447 - INFO - Años: 2022-2024
+2025-11-10 21:12:56,448 - INFO - Meses: Todos
+2025-11-10 21:12:56,449 - INFO - RUN_ID: obt_optimized_20251110_211256
+2025-11-10 21:12:56,450 - INFO - Overwrite: False
+2025-11-10 21:12:56,451 - INFO - ================================================================================
+
+2025-11-10 21:12:56,452 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-10 21:12:56,454 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-10 21:12:56,455 - INFO - 
+================================================================================
+2025-11-10 21:12:56,456 - INFO - Servicio: YELLOW
+2025-11-10 21:12:56,456 - INFO - ================================================================================
+
+2025-11-10 21:17:39,016 - INFO -   ✓ yellow 2022-01: 2,312,520 filas en 189.4s (12211 filas/seg)
+2025-11-10 21:21:50,465 - INFO -   ✓ yellow 2022-02: 2,787,538 filas en 164.0s (16994 filas/seg)
+2025-11-10 21:26:33,627 - INFO -   ✓ yellow 2022-03: 3,392,571 filas en 183.9s (18448 filas/seg)
+2025-11-10 21:31:13,002 - INFO -   ✓ yellow 2022-04: 3,363,248 filas en 180.8s (18599 filas/seg)
+2025-11-10 21:36:00,642 - INFO -   ✓ yellow 2022-05: 3,333,884 filas en 183.0s (18222 filas/seg)
+2025-11-10 21:40:44,069 - INFO -   ✓ yellow 2022-06: 3,295,639 filas en 182.5s (18054 filas/seg)
+2025-11-10 21:45:06,696 - INFO -   ✓ yellow 2022-07: 2,948,567 filas en 160.5s (18373 filas/seg)
+2025-11-10 21:49:31,308 - INFO -   ✓ yellow 2022-08: 2,932,300 filas en 160.6s (18263 filas/seg)
+2025-11-10 21:53:39,096 - INFO -   ✓ yellow 2022-09: 2,935,762 filas en 135.5s (21659 filas/seg)
+2025-11-10 21:57:38,025 - INFO -   ✓ yellow 2022-10: 3,394,802 filas en 145.8s (23282 filas/seg)
+2025-11-10 22:01:30,380 - INFO -   ✓ yellow 2022-11: 2,996,954 filas en 138.7s (21609 filas/seg)
+2025-11-10 22:05:18,705 - INFO -   ✓ yellow 2022-12: 3,123,189 filas en 139.6s (22377 filas/seg)
+2025-11-10 22:09:04,698 - INFO -   ✓ yellow 2023-01: 2,873,777 filas en 134.6s (21357 filas/seg)
+2025-11-10 22:13:06,428 - INFO -   ✓ yellow 2023-02: 2,724,380 filas en 130.0s (20955 filas/seg)
+2025-11-10 22:17:13,883 - INFO -   ✓ yellow 2023-03: 3,192,669 filas en 154.2s (20710 filas/seg)
+2025-11-10 22:21:07,605 - INFO -   ✓ yellow 2023-04: 3,076,420 filas en 139.7s (22014 filas/seg)
+2025-11-10 22:25:20,017 - INFO -   ✓ yellow 2023-05: 3,279,353 filas en 146.9s (22327 filas/seg)
+2025-11-10 22:29:40,221 - INFO -   ✓ yellow 2023-06: 3,079,992 filas en 146.1s (21079 filas/seg)
+2025-11-10 22:33:30,315 - INFO -   ✓ yellow 2023-07: 2,701,952 filas en 133.0s (20308 filas/seg)
+2025-11-10 22:37:22,046 - INFO -   ✓ yellow 2023-08: 2,619,785 filas en 126.7s (20681 filas/seg)
+2025-11-10 22:41:05,832 - INFO -   ✓ yellow 2023-09: 2,593,908 filas en 123.4s (21019 filas/seg)
+2025-11-10 22:45:26,548 - INFO -   ✓ yellow 2023-10: 3,232,533 filas en 154.6s (20915 filas/seg)
+2025-11-10 22:49:55,736 - INFO -   ✓ yellow 2023-11: 3,081,036 filas en 148.5s (20746 filas/seg)
+2025-11-10 22:54:05,718 - INFO -   ✓ yellow 2023-12: 3,074,738 filas en 146.6s (20968 filas/seg)
+2025-11-10 22:57:54,161 - INFO -   ✓ yellow 2024-01: 2,718,931 filas en 124.2s (21883 filas/seg)
+2025-11-10 23:01:46,707 - INFO -   ✓ yellow 2024-02: 2,719,472 filas en 128.6s (21141 filas/seg)
+2025-11-10 23:05:59,627 - INFO -   ✓ yellow 2024-03: 3,035,114 filas en 141.7s (21423 filas/seg)
+2025-11-10 23:10:14,488 - INFO -   ✓ yellow 2024-04: 2,985,737 filas en 142.3s (20975 filas/seg)
+2025-11-10 23:14:52,089 - INFO -   ✓ yellow 2024-05: 3,187,164 filas en 166.9s (19098 filas/seg)
+2025-11-10 23:18:56,604 - INFO -   ✓ yellow 2024-06: 2,997,673 filas en 133.5s (22456 filas/seg)
+2025-11-10 23:22:55,275 - INFO -   ✓ yellow 2024-07: 2,670,336 filas en 133.3s (20034 filas/seg)
+2025-11-10 23:26:50,654 - INFO -   ✓ yellow 2024-08: 2,589,670 filas en 123.5s (20972 filas/seg)
+2025-11-10 23:31:02,105 - INFO -   ✓ yellow 2024-09: 3,012,262 filas en 138.3s (21773 filas/seg)
+2025-11-10 23:35:18,675 - INFO -   ✓ yellow 2024-10: 3,288,022 filas en 150.8s (21806 filas/seg)
+2025-11-10 23:39:25,986 - INFO -   ✓ yellow 2024-11: 3,134,633 filas en 140.2s (22354 filas/seg)
+2025-11-10 23:44:21,399 - INFO -   ✓ yellow 2024-12: 3,187,733 filas en 159.5s (19986 filas/seg)
+2025-11-10 23:44:21,401 - INFO - 
+================================================================================
+2025-11-10 23:44:21,402 - INFO - Servicio: GREEN
+2025-11-10 23:44:21,402 - INFO - ================================================================================
+
+2025-11-10 23:45:09,630 - INFO -   ✓ green 2022-01: 51,684 filas en 7.6s (6815 filas/seg)
+2025-11-10 23:46:00,425 - INFO -   ✓ green 2022-02: 57,130 filas en 8.0s (7132 filas/seg)
+2025-11-10 23:46:50,698 - INFO -   ✓ green 2022-03: 64,897 filas en 8.2s (7884 filas/seg)
+2025-11-10 23:47:41,064 - INFO -   ✓ green 2022-04: 62,141 filas en 8.4s (7401 filas/seg)
+2025-11-10 23:48:32,972 - INFO -   ✓ green 2022-05: 60,703 filas en 8.1s (7500 filas/seg)
+2025-11-10 23:49:25,295 - INFO -   ✓ green 2022-06: 58,391 filas en 8.4s (6975 filas/seg)
+2025-11-10 23:50:17,285 - INFO -   ✓ green 2022-07: 51,869 filas en 8.1s (6380 filas/seg)
+2025-11-10 23:51:08,563 - INFO -   ✓ green 2022-08: 54,220 filas en 7.8s (6939 filas/seg)
+2025-11-10 23:52:01,037 - INFO -   ✓ green 2022-09: 56,321 filas en 8.3s (6797 filas/seg)
+2025-11-10 23:52:52,869 - INFO -   ✓ green 2022-10: 57,152 filas en 8.4s (6774 filas/seg)
+2025-11-10 23:53:42,870 - INFO -   ✓ green 2022-11: 51,888 filas en 7.9s (6568 filas/seg)
+2025-11-10 23:54:33,404 - INFO -   ✓ green 2022-12: 60,431 filas en 8.2s (7374 filas/seg)
+2025-11-10 23:55:24,599 - INFO -   ✓ green 2023-01: 59,800 filas en 8.2s (7275 filas/seg)
+2025-11-10 23:56:16,076 - INFO -   ✓ green 2023-02: 56,363 filas en 8.1s (6937 filas/seg)
+2025-11-10 23:57:07,519 - INFO -   ✓ green 2023-03: 63,227 filas en 8.6s (7311 filas/seg)
+2025-11-10 23:57:58,365 - INFO -   ✓ green 2023-04: 56,973 filas en 8.0s (7126 filas/seg)
+2025-11-10 23:58:49,159 - INFO -   ✓ green 2023-05: 60,101 filas en 8.2s (7334 filas/seg)
+2025-11-10 23:59:46,649 - INFO -   ✓ green 2023-06: 56,202 filas en 8.6s (6538 filas/seg)
+2025-11-11 00:00:50,003 - INFO -   ✓ green 2023-07: 52,314 filas en 9.4s (5588 filas/seg)
+2025-11-11 00:01:56,846 - INFO -   ✓ green 2023-08: 52,476 filas en 8.3s (6332 filas/seg)
+2025-11-11 00:02:56,638 - INFO -   ✓ green 2023-09: 56,494 filas en 8.9s (6361 filas/seg)
+2025-11-11 00:03:56,472 - INFO -   ✓ green 2023-10: 56,953 filas en 8.8s (6507 filas/seg)
+2025-11-11 00:04:50,761 - INFO -   ✓ green 2023-11: 55,199 filas en 8.5s (6507 filas/seg)
+2025-11-11 00:05:49,668 - INFO -   ✓ green 2023-12: 55,236 filas en 9.8s (5625 filas/seg)
+2025-11-11 00:06:42,899 - INFO -   ✓ green 2024-01: 49,416 filas en 8.7s (5657 filas/seg)
+2025-11-11 00:07:38,233 - INFO -   ✓ green 2024-02: 47,031 filas en 8.4s (5599 filas/seg)
+2025-11-11 00:08:36,715 - INFO -   ✓ green 2024-03: 51,461 filas en 10.0s (5148 filas/seg)
+2025-11-11 00:09:51,441 - INFO -   ✓ green 2024-04: 50,355 filas en 9.4s (5329 filas/seg)
+2025-11-11 00:11:11,850 - INFO -   ✓ green 2024-05: 54,959 filas en 12.5s (4387 filas/seg)
+2025-11-11 00:12:25,248 - INFO -   ✓ green 2024-06: 49,159 filas en 12.4s (3968 filas/seg)
+2025-11-11 00:13:34,497 - INFO -   ✓ green 2024-07: 46,332 filas en 10.1s (4596 filas/seg)
+2025-11-11 00:15:02,621 - INFO -   ✓ green 2024-08: 46,382 filas en 10.8s (4304 filas/seg)
+2025-11-11 00:16:17,278 - INFO -   ✓ green 2024-09: 48,822 filas en 10.2s (4804 filas/seg)
+2025-11-11 00:17:26,888 - INFO -   ✓ green 2024-10: 50,896 filas en 11.7s (4340 filas/seg)
+2025-11-11 00:18:37,825 - INFO -   ✓ green 2024-11: 47,061 filas en 10.1s (4652 filas/seg)
+2025-11-11 00:19:55,186 - INFO -   ✓ green 2024-12: 48,123 filas en 14.1s (3411 filas/seg)
+2025-11-11 00:19:55,263 - ERROR - 
+✗ Error fatal: column "trip_duration_min" specified more than once
+
+2025-11-11 00:19:55,485 - INFO - ✓ Conexión cerrada
+2025-11-11 00:49:38,747 - INFO - ✓ Conectado a admin@postgres:5432/nyc_taxi
+2025-11-11 00:49:38,748 - INFO - ✓ Optimizaciones avanzadas habilitadas (parallel_workers=8)
+2025-11-11 00:49:38,749 - INFO - 
+================================================================================
+2025-11-11 00:49:38,750 - INFO - MODO: BY-PARTITION OPTIMIZADO
+2025-11-11 00:49:38,750 - INFO - ================================================================================
+2025-11-11 00:49:38,751 - INFO - Servicios: yellow, green
+2025-11-11 00:49:38,751 - INFO - Años: 2022-2024
+2025-11-11 00:49:38,752 - INFO - Meses: Todos
+2025-11-11 00:49:38,752 - INFO - RUN_ID: obt_optimized_20251111_004938
+2025-11-11 00:49:38,753 - INFO - Overwrite: False
+2025-11-11 00:49:38,753 - INFO - ================================================================================
+
+2025-11-11 00:49:38,758 - INFO - ✓ Esquema 'analytics' verificado/creado
+2025-11-11 00:49:38,763 - INFO - ✓ Tabla OBT base creada (UNLOGGED para máxima velocidad)
+2025-11-11 00:49:38,764 - INFO - 
+================================================================================
+2025-11-11 00:49:38,764 - INFO - Servicio: YELLOW
+2025-11-11 00:49:38,765 - INFO - ================================================================================
+
+2025-11-11 00:52:21,104 - INFO -   [SKIP] yellow 2022-01: Ya existe (2,312,520 filas)
+2025-11-11 00:54:55,196 - INFO -   [SKIP] yellow 2022-02: Ya existe (2,787,538 filas)
+2025-11-11 00:57:25,014 - INFO -   [SKIP] yellow 2022-03: Ya existe (3,392,571 filas)
+2025-11-11 01:00:06,012 - INFO -   [SKIP] yellow 2022-04: Ya existe (3,363,248 filas)
+2025-11-11 01:02:32,503 - INFO -   [SKIP] yellow 2022-05: Ya existe (3,333,884 filas)
+2025-11-11 01:04:26,594 - INFO -   [SKIP] yellow 2022-06: Ya existe (3,295,639 filas)
+2025-11-11 01:06:26,087 - INFO -   [SKIP] yellow 2022-07: Ya existe (2,948,567 filas)
+2025-11-11 01:08:28,664 - INFO -   [SKIP] yellow 2022-08: Ya existe (2,932,300 filas)
+2025-11-11 01:10:35,886 - INFO -   [SKIP] yellow 2022-09: Ya existe (2,935,762 filas)
+2025-11-11 01:12:38,856 - INFO -   [SKIP] yellow 2022-10: Ya existe (3,394,802 filas)
+2025-11-11 01:14:43,747 - INFO -   [SKIP] yellow 2022-11: Ya existe (2,996,954 filas)
+2025-11-11 01:16:48,863 - INFO -   [SKIP] yellow 2022-12: Ya existe (3,123,189 filas)
+2025-11-11 01:18:53,913 - INFO -   [SKIP] yellow 2023-01: Ya existe (2,873,777 filas)
+2025-11-11 01:20:59,973 - INFO -   [SKIP] yellow 2023-02: Ya existe (2,724,380 filas)
+2025-11-11 01:23:05,924 - INFO -   [SKIP] yellow 2023-03: Ya existe (3,192,669 filas)
+2025-11-11 01:25:10,888 - INFO -   [SKIP] yellow 2023-04: Ya existe (3,076,420 filas)
+2025-11-11 01:27:15,623 - INFO -   [SKIP] yellow 2023-05: Ya existe (3,279,353 filas)
+2025-11-11 01:29:20,164 - INFO -   [SKIP] yellow 2023-06: Ya existe (3,079,992 filas)
+2025-11-11 01:31:25,734 - INFO -   [SKIP] yellow 2023-07: Ya existe (2,701,952 filas)
+2025-11-11 01:33:30,763 - INFO -   [SKIP] yellow 2023-08: Ya existe (2,619,785 filas)
+2025-11-11 01:35:35,657 - INFO -   [SKIP] yellow 2023-09: Ya existe (2,593,908 filas)
+2025-11-11 01:37:41,880 - INFO -   [SKIP] yellow 2023-10: Ya existe (3,232,533 filas)
+2025-11-11 01:39:47,301 - INFO -   [SKIP] yellow 2023-11: Ya existe (3,081,036 filas)
+2025-11-11 01:41:55,401 - INFO -   [SKIP] yellow 2023-12: Ya existe (3,074,738 filas)
+2025-11-11 01:44:00,941 - INFO -   [SKIP] yellow 2024-01: Ya existe (2,718,931 filas)
+2025-11-11 01:46:07,629 - INFO -   [SKIP] yellow 2024-02: Ya existe (2,719,472 filas)
+2025-11-11 01:48:16,689 - INFO -   [SKIP] yellow 2024-03: Ya existe (3,035,114 filas)
+2025-11-11 01:50:25,728 - INFO -   [SKIP] yellow 2024-04: Ya existe (2,985,737 filas)
+2025-11-11 01:52:33,101 - INFO -   [SKIP] yellow 2024-05: Ya existe (3,187,164 filas)
+2025-11-11 01:54:38,671 - INFO -   [SKIP] yellow 2024-06: Ya existe (2,997,673 filas)
+2025-11-11 01:56:45,582 - INFO -   [SKIP] yellow 2024-07: Ya existe (2,670,336 filas)
+2025-11-11 01:58:52,713 - INFO -   [SKIP] yellow 2024-08: Ya existe (2,589,670 filas)
+2025-11-11 02:00:58,636 - INFO -   [SKIP] yellow 2024-09: Ya existe (3,012,262 filas)
+2025-11-11 02:03:02,053 - INFO -   [SKIP] yellow 2024-10: Ya existe (3,288,022 filas)
+2025-11-11 02:05:03,187 - INFO -   [SKIP] yellow 2024-11: Ya existe (3,134,633 filas)
+2025-11-11 02:07:05,278 - INFO -   [SKIP] yellow 2024-12: Ya existe (3,187,733 filas)
+2025-11-11 02:07:05,279 - INFO - 
+================================================================================
+2025-11-11 02:07:05,279 - INFO - Servicio: GREEN
+2025-11-11 02:07:05,280 - INFO - ================================================================================
+
+2025-11-11 02:07:50,122 - INFO -   [SKIP] green 2022-01: Ya existe (51,684 filas)
+2025-11-11 02:08:34,299 - INFO -   [SKIP] green 2022-02: Ya existe (57,130 filas)
+2025-11-11 02:09:19,546 - INFO -   [SKIP] green 2022-03: Ya existe (64,897 filas)
+2025-11-11 02:10:05,510 - INFO -   [SKIP] green 2022-04: Ya existe (62,141 filas)
+2025-11-11 02:10:52,345 - INFO -   [SKIP] green 2022-05: Ya existe (60,703 filas)
+2025-11-11 02:11:37,188 - INFO -   [SKIP] green 2022-06: Ya existe (58,391 filas)
+2025-11-11 02:12:21,801 - INFO -   [SKIP] green 2022-07: Ya existe (51,869 filas)
+2025-11-11 02:13:06,649 - INFO -   [SKIP] green 2022-08: Ya existe (54,220 filas)
+2025-11-11 02:13:50,522 - INFO -   [SKIP] green 2022-09: Ya existe (56,321 filas)
+2025-11-11 02:14:35,647 - INFO -   [SKIP] green 2022-10: Ya existe (57,152 filas)
+2025-11-11 02:15:19,749 - INFO -   [SKIP] green 2022-11: Ya existe (51,888 filas)
+2025-11-11 02:16:03,807 - INFO -   [SKIP] green 2022-12: Ya existe (60,431 filas)
+2025-11-11 02:16:48,486 - INFO -   [SKIP] green 2023-01: Ya existe (59,800 filas)
+2025-11-11 02:17:33,200 - INFO -   [SKIP] green 2023-02: Ya existe (56,363 filas)
+2025-11-11 02:18:17,058 - INFO -   [SKIP] green 2023-03: Ya existe (63,227 filas)
+2025-11-11 02:19:01,279 - INFO -   [SKIP] green 2023-04: Ya existe (56,973 filas)
+2025-11-11 02:19:45,120 - INFO -   [SKIP] green 2023-05: Ya existe (60,101 filas)
+2025-11-11 02:20:30,576 - INFO -   [SKIP] green 2023-06: Ya existe (56,202 filas)
+2025-11-11 02:21:14,910 - INFO -   [SKIP] green 2023-07: Ya existe (52,314 filas)
+2025-11-11 02:21:58,551 - INFO -   [SKIP] green 2023-08: Ya existe (52,476 filas)
+2025-11-11 02:22:42,786 - INFO -   [SKIP] green 2023-09: Ya existe (56,494 filas)
+2025-11-11 02:23:26,830 - INFO -   [SKIP] green 2023-10: Ya existe (56,953 filas)
+2025-11-11 02:24:11,286 - INFO -   [SKIP] green 2023-11: Ya existe (55,199 filas)
+2025-11-11 02:24:55,410 - INFO -   [SKIP] green 2023-12: Ya existe (55,236 filas)
+2025-11-11 02:25:39,641 - INFO -   [SKIP] green 2024-01: Ya existe (49,416 filas)
+2025-11-11 02:26:24,399 - INFO -   [SKIP] green 2024-02: Ya existe (47,031 filas)
+2025-11-11 02:27:08,596 - INFO -   [SKIP] green 2024-03: Ya existe (51,461 filas)
+2025-11-11 02:27:52,067 - INFO -   [SKIP] green 2024-04: Ya existe (50,355 filas)
+2025-11-11 02:28:35,510 - INFO -   [SKIP] green 2024-05: Ya existe (54,959 filas)
+2025-11-11 02:29:19,462 - INFO -   [SKIP] green 2024-06: Ya existe (49,159 filas)
+2025-11-11 02:30:03,546 - INFO -   [SKIP] green 2024-07: Ya existe (46,332 filas)
+2025-11-11 02:30:47,347 - INFO -   [SKIP] green 2024-08: Ya existe (46,382 filas)
+2025-11-11 02:31:30,179 - INFO -   [SKIP] green 2024-09: Ya existe (48,822 filas)
+2025-11-11 02:32:13,969 - INFO -   [SKIP] green 2024-10: Ya existe (50,896 filas)
+2025-11-11 02:32:56,873 - INFO -   [SKIP] green 2024-11: Ya existe (47,061 filas)
+2025-11-11 02:33:40,153 - INFO -   [SKIP] green 2024-12: Ya existe (48,123 filas)
+2025-11-11 02:33:40,155 - INFO - 
+================================================================================
+2025-11-11 02:33:40,155 - INFO - RESUMEN BY-PARTITION OPTIMIZADO
+2025-11-11 02:33:40,156 - INFO - ================================================================================
+2025-11-11 02:33:40,157 - INFO - Particiones procesadas: 0
+2025-11-11 02:33:40,157 - INFO - Particiones omitidas: 72
+2025-11-11 02:33:40,158 - INFO - Total filas insertadas: 0
+2025-11-11 02:33:40,159 - INFO - Tiempo total: 6241.4s
+2025-11-11 02:33:40,160 - INFO - ================================================================================
+
+2025-11-11 02:33:40,162 - INFO - 
+================================================================================
+2025-11-11 02:33:40,162 - INFO - RESUMEN OBT COMPLETO
+2025-11-11 02:33:40,163 - INFO - ================================================================================
+
+2025-11-11 02:33:49,575 - INFO - Total filas en OBT: 111,060,258
+
+2025-11-11 02:34:07,348 - INFO - Por servicio:
+2025-11-11 02:34:07,349 - INFO -   green: 1,958,162
+2025-11-11 02:34:07,350 - INFO -   yellow: 109,102,096
+2025-11-11 02:34:24,598 - INFO - 
+Por año:
+2025-11-11 02:34:24,600 - INFO -   2020: 16
+2025-11-11 02:34:24,600 - INFO -   2021: 1,227,842
+2025-11-11 02:34:24,601 - INFO -   2022: 37,503,798
+2025-11-11 02:34:24,602 - INFO -   2023: 36,211,866
+2025-11-11 02:34:24,603 - INFO -   2024: 36,116,721
+2025-11-11 02:34:24,604 - INFO -   2025: 15
+2025-11-11 02:34:24,648 - INFO - 
+Tamaños:
+2025-11-11 02:34:24,649 - INFO -   Tabla: 38 GB
+2025-11-11 02:34:24,651 - INFO -   Índices: 2390 MB
+2025-11-11 02:34:24,653 - INFO -   Total: 41 GB
+2025-11-11 02:34:24,654 - INFO - 
+Columnas calculadas disponibles:
+2025-11-11 02:34:24,655 - INFO -   • trip_duration_min - Duración del viaje en minutos
+2025-11-11 02:34:24,657 - INFO -   • trip_speed_mph - Velocidad promedio en MPH
+2025-11-11 02:34:24,661 - INFO -   • is_weekend - Indicador de fin de semana
+2025-11-11 02:34:24,662 - INFO -   • hour_of_day - Hora del día
+2025-11-11 02:34:24,664 - INFO - 
+================================================================================
+
+2025-11-11 02:34:24,667 - INFO - ✓ OBT Builder OPTIMIZADO completado exitosamente
+
+2025-11-11 02:34:24,679 - INFO - ✓ Conexión cerrada

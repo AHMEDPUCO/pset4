@@ -1,0 +1,4 @@
+pandas
+psycopg2-binary
+SQLAlchemy>=2.0
+tqdm

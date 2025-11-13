@@ -1,0 +1,6 @@
+psycopg2-binary
+SQLAlchemy>=2.0
+pandas
+pyarrow
+tqdm
+fastparquet
